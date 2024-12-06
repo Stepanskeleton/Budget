@@ -78,36 +78,36 @@
              <TextBlock Grid.Row="16" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="18" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="20" Grid.Column="0">Промежуточный итог</TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="12" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="12" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="12" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="14" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="14" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="14" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="16" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="16" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="16" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="18" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="18" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="18" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="20" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="20" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="20" Grid.Column="6" Text="0" Background="Gray"/>
+                <TextBox Grid.Row="2" Grid.Column="2"  Background="Gray" Name = "VideoPlane" TextChanged="VideoChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="4"  Background="Gray" Name = "VideoFact"  TextChanged="VideoChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="6" IsReadOnly="True" Name = "VideoDifferent" Background="Gray" />
+                <TextBox Grid.Row="4" Grid.Column="2"  Background="Gray" Name = "MusicPlane" TextChanged="MusicChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="4"  Background="Gray" Name = "MusicFact" TextChanged="MusicChangeText"/>
+                <TextBox IsReadOnly="True" Grid.Row="4" Grid.Column="6"  Background="Gray" Name = "MusicDifferent"/>
+                <TextBox Grid.Row="6" Grid.Column="2"  Background="Gray" Name = "FilmsPlane"/>
+                <TextBox Grid.Row="6" Grid.Column="4"  Background="Gray" Name = "FilmFact"/>
+                <TextBox Grid.Row="6" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "FilmsDifferent"/>
+                <TextBox Grid.Row="8" Grid.Column="2"  Background="Gray" Name = "ConcertsPlane"/>
+                <TextBox Grid.Row="8" Grid.Column="4"  Background="Gray" Name = "ConcertsFact"/>
+                <TextBox IsReadOnly="True" Grid.Row="8" Grid.Column="6"  Background="Gray" Name = "ConcertsDifference"/>
+                <TextBox Grid.Row="10" Grid.Column="2"  Background="Gray" Name = "SportsIventsPlane"/>
+                <TextBox Grid.Row="10" Grid.Column="4"  Background="Gray" Name = "SportsIventsFact"/>
+                <TextBox IsReadOnly="True" Grid.Row="10" Grid.Column="6"  Background="Gray" Name = "SportsIventsDifference"/>
+                <TextBox Grid.Row="12" Grid.Column="2"  Background="Gray" Name = "TheatrePlane"/>
+                <TextBox Grid.Row="12" Grid.Column="4"  Background="Gray" Name = "TheatreFact"/>
+                <TextBox Grid.Row="12" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "TheatreDifferent"/>
+                <TextBox Grid.Row="14" Grid.Column="2"  Background="Gray" Name = "Other1Plane"/>
+                <TextBox Grid.Row="14" Grid.Column="4"  Background="Gray" Name = "Other1Fact"/>
+                <TextBox Grid.Row="14" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "Other1Difference"/>
+                <TextBox Grid.Row="16" Grid.Column="2"  Background="Gray" Name = "Other2Plane"/>
+                <TextBox Grid.Row="16" Grid.Column="4"  Background="Gray" Name = "Other2Fact"/>
+                <TextBox Grid.Row="16" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "Other2Difference"/>
+                <TextBox Grid.Row="18" Grid.Column="2"  Background="Gray" Name ="Other3Plane"/>
+                <TextBox Grid.Row="18" Grid.Column="4"  Background="Gray" Name = "Other3Fact"/>
+                <TextBox Grid.Row="18" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "Other3Difference"/>
+                <TextBox Grid.Row="20" Grid.Column="2" IsReadOnly="True" Background="Gray" Name = "TextBoxSubTotalPlane"/>
+                <TextBox Grid.Row="20" Grid.Column="4" IsReadOnly="True" Background="Gray" Name = "TextBoxSubTotalFact"/>
+                <TextBox Grid.Row="20" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "TextBoxSubTotalDifference"/>
          </Grid>
         </StackPanel>
     </Grid>

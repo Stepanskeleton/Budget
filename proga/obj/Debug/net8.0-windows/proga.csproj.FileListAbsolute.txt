@@ -44,3 +44,4 @@ C:\projects C#\proga\proga\obj\Debug\net8.0-windows\PersonalHygiene.g.cs
 C:\projects C#\proga\proga\obj\Debug\net8.0-windows\PersonalHygiene.baml
 C:\projects C#\proga\proga\obj\Debug\net8.0-windows\LegalExpenses.g.cs
 C:\projects C#\proga\proga\obj\Debug\net8.0-windows\LegalExpenses.baml
+C:\projects C#\proga\proga\obj\Debug\net8.0-windows\proga.sourcelink.json
