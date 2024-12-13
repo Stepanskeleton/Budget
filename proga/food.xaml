@@ -54,18 +54,18 @@
              <TextBlock Grid.Row="4" Grid.Column="0">Рестораны</TextBlock>
              <TextBlock Grid.Row="6" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="8" Grid.Column="0">Промежуточный итог</TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="6" Text="0" Background="Gray"/>
+                <TextBox Grid.Row="2" Grid.Column="2"  Background="Gray" Name="FoodsPlane" TextChanged="FoodsChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="4"  Background="Gray" Name="FoodsFact" TextChanged="FoodsChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="6"  Background="Gray" Name="FoodsDifference"/>
+                <TextBox Grid.Row="4" Grid.Column="2"  Background="Gray" Name="RestaurantPlane" TextChanged="RestaurantChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="4"  Background="Gray" Name="RestaurantFact" TextChanged="RestaurantChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="6"  Background="Gray" Name="RestaurantDifference"/>
+                <TextBox Grid.Row="6" Grid.Column="2"  Background="Gray" Name="OtherPlane" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="4"  Background="Gray" Name="OtherFact" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="6"  Background="Gray" Name="OtherDifference"/>
+                <TextBox Grid.Row="8" Grid.Column="2"  Background="Gray" Name="TextBoxSubTotalPlane"/>
+                <TextBox Grid.Row="8" Grid.Column="4"  Background="Gray" Name="TextBoxSubTotalFact"/>
+                <TextBox Grid.Row="8" Grid.Column="6"  Background="Gray" Name="TextBoxSubTotalDifference"/>
                 
          </Grid>
         </StackPanel>

@@ -68,27 +68,27 @@
              <TextBlock Grid.Row="10" Grid.Column="0">Кредитная карта</TextBlock>
              <TextBlock Grid.Row="12" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="14" Grid.Column="0">Промежуточные итоги</TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="12" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="12" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="12" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="14" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="14" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="14" Grid.Column="6" Text="0" Background="Gray"/>
+                <TextBox Grid.Row="2" Grid.Column="2"  Background="Gray" Name="PersonalExpensesPlane" TextChanged="PersonalExpensesChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="4" Background="Gray" Name="PersonalExpensesFact" TextChanged="PersonalExpensesChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="6"  Background="Gray" Name="PersonalExpensesDifference"/>
+                <TextBox Grid.Row="4" Grid.Column="2"  Background="Gray" Name="ForStudyPlane" TextChanged="ForStudyChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="4"  Background="Gray" Name="ForStudyFact" TextChanged="ForStudyChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="6"  Background="Gray" Name="ForStudyDifference"/>
+                <TextBox Grid.Row="6" Grid.Column="2"  Background="Gray" Name="CreditCard1Plane" TextChanged="CreditCard1ChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="4"  Background="Gray" Name="CreditCard1Fact" TextChanged="CreditCard1ChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="6"  Background="Gray" Name="CreditCard1Difference"/>
+                <TextBox Grid.Row="8" Grid.Column="2"  Background="Gray" Name="CreditCard2Plane" TextChanged="CreditCard2ChangeText"/>
+                <TextBox Grid.Row="8" Grid.Column="4" Background="Gray" Name="CreditCard2Fact" TextChanged="CreditCard2ChangeText"/>
+                <TextBox Grid.Row="8" Grid.Column="6"  Background="Gray" Name="CreditCard2Difference"/>
+                <TextBox Grid.Row="10" Grid.Column="2"  Background="Gray" Name="CreditCard3Plane" TextChanged="CreditCard3ChangeText"/>
+                <TextBox Grid.Row="10" Grid.Column="4"  Background="Gray" Name="CreditCard3Fact" TextChanged="CreditCard3ChangeText"/>
+                <TextBox Grid.Row="10" Grid.Column="6"  Background="Gray" Name="CreditCard3Difference"/>
+                <TextBox Grid.Row="12" Grid.Column="2"  Background="Gray" Name="OtherPlane" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="12" Grid.Column="4"  Background="Gray" Name="OtherFact" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="12" Grid.Column="6" Background="Gray" Name="OtherDifference"/>
+                <TextBox Grid.Row="14" Grid.Column="2"  Background="Gray" Name = "TextBoxSubTotalPlane"/>
+                <TextBox Grid.Row="14" Grid.Column="4"  Background="Gray" Name="TextBoxSubTotalFact"/>
+                <TextBox Grid.Row="14" Grid.Column="6"  Background="Gray" Name="TextBoxSubTotalDifference"/>
          </Grid>
         </StackPanel>
     </Grid>

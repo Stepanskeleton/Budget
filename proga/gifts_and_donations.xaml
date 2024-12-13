@@ -57,18 +57,18 @@
              <TextBlock Grid.Row="6" Grid.Column="0">Благотворительный взнос 3</TextBlock>
              <TextBlock Grid.Row="8" Grid.Column="0">Промежуточный итог</TextBlock>
             
-                <TextBox Grid.Row="2" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="6" Text="0" Background="Gray"/>
+                <TextBox Grid.Row="2" Grid.Column="2"  Background="Gray" Name="Num1Plane" TextChanged="Num1ChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="4"  Background="Gray" Name="Num1Fact" TextChanged="Num1ChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="6"  Background="Gray" Name="Num1Difference"/>
+                <TextBox Grid.Row="4" Grid.Column="2"  Background="Gray" Name="Num2Plane" TextChanged="Num2ChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="4"  Background="Gray" Name="Num2Fact" TextChanged="Num2ChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="6"  Background="Gray" Name="Num2Difference"/>
+                <TextBox Grid.Row="6" Grid.Column="2"  Background="Gray" Name="Num3Plane" TextChanged="Num3ChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="4"  Background="Gray" Name="Num3Fact" TextChanged="Num3ChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="6"  Background="Gray" Name="Num3Difference"/>
+                <TextBox Grid.Row="8" Grid.Column="2"  Background="Gray" Name="TextBoxSubTotalPlane"/>
+                <TextBox Grid.Row="8" Grid.Column="4"  Background="Gray" Name="TextBoxSubTotalFact"/>
+                <TextBox Grid.Row="8" Grid.Column="6"  Background="Gray" Name="TextBoxSubTotalDifference"/>
                
          </Grid>
         </StackPanel>

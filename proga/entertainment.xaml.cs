@@ -86,4 +86,46 @@ public partial class entertainment : Page
     {
         DifferenseUpdate(ref FilmsPlane, ref FilmFact, ref FilmsDifferent, ref FilmPlaneOld, ref FilmFactOld, ref FilmDifferenceOld);
     }
+    public double  ConcertsPlaneOld = 0;
+    public double  ConcertsFactOld = 0;
+    public double  ConcertsDifferenceOld= 0;
+    private void ConcertsText(object sender, TextChangedEventArgs e)
+    {
+        DifferenseUpdate(ref ConcertsPlane, ref ConcertsFact, ref ConcertsDifference, ref  ConcertsPlaneOld, ref ConcertsFactOld, ref ConcertsDifferenceOld);
+    }
+    public double SportIventsPlaneOld = 0;
+    public double  SportIventsFactOld = 0;
+    public double SportIventsDifferenceOld= 0;
+    private void SportIventsText(object sender, TextChangedEventArgs e)
+    {
+        DifferenseUpdate(ref SportsIventsPlane, ref SportsIventsFact, ref SportsIventsDifference, ref  SportIventsPlaneOld, ref SportIventsFactOld, ref SportIventsDifferenceOld);
+    }
+    public double TheatrePlaneOld = 0;
+    public double  TheatreFactOld = 0;
+    public double TheatreDifferenceOld= 0;
+    private void TheatreText(object sender, TextChangedEventArgs e)
+    {
+        DifferenseUpdate(ref TheatrePlane, ref TheatreFact, ref TheatreDifferent, ref  TheatrePlaneOld, ref TheatreFactOld, ref TheatreDifferenceOld);
+    }
+    public double Other1PlaneOld = 0;
+    public double  Other1FactOld = 0;
+    public double Other1DifferenceOld= 0;
+    private void Other1Text(object sender, TextChangedEventArgs e)
+    {
+        DifferenseUpdate(ref Other1Plane, ref Other1Fact, ref Other1Difference, ref  Other1PlaneOld, ref Other1FactOld, ref Other1DifferenceOld);
+    }
+    public double Other2PlaneOld = 0;
+    public double  Other2FactOld = 0;
+    public double Other2DifferenceOld= 0;
+    private void Other2Text(object sender, TextChangedEventArgs e)
+    {
+        DifferenseUpdate(ref Other2Plane, ref Other2Fact, ref Other2Difference, ref  Other2PlaneOld, ref Other2FactOld, ref Other2DifferenceOld);
+    }
+    public double Other3PlaneOld = 0;
+    public double  Other3FactOld = 0;
+    public double Other3DifferenceOld= 0;
+    private void Other3Text(object sender, TextChangedEventArgs e)
+    {
+        DifferenseUpdate(ref Other3Plane, ref Other3Fact, ref Other3Difference, ref  Other3PlaneOld, ref Other3FactOld, ref Other3DifferenceOld);
+    }
 }

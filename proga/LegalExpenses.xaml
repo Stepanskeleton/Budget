@@ -58,21 +58,21 @@
              <TextBlock Grid.Row="6" Grid.Column="0">налоги или платежи по решению суда</TextBlock>
              <TextBlock Grid.Row="8" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="10" Grid.Column="0">Промежуточный итог</TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="6" Text="0" Background="Gray"/>
+                <TextBox Grid.Row="2" Grid.Column="2"  Background="Gray" Name="AdvocatePlane" TextChanged="AdvocateChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="4"  Background="Gray" Name="AdvocateFact" TextChanged="AdvocateChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="6"  Background="Gray" Name="AdvocateDifference"/>
+                <TextBox Grid.Row="4" Grid.Column="2"  Background="Gray" Name="AlimonyPlane" TextChanged="AlimonyChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="4"  Background="Gray" Name="AlimonyFact" TextChanged="AlimonyChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="6"  Background="Gray" Name="AlimonyDifference"/>
+                <TextBox Grid.Row="6" Grid.Column="2"  Background="Gray" Name="TaxesPlane" TextChanged="TaxesChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="4"  Background="Gray" Name="TaxesFact" TextChanged="TaxesChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="6"  Background="Gray" Name="TaxesDifference"/>
+                <TextBox Grid.Row="8" Grid.Column="2"  Background="Gray" Name="OtherPlane" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="8" Grid.Column="4"  Background="Gray" Name="OtherFact" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="8" Grid.Column="6" Background="Gray" Name="OtherDifference"/>
+                <TextBox Grid.Row="10" Grid.Column="2"  Background="Gray" Name="TextBoxSubTotalPlane"/>
+                <TextBox Grid.Row="10" Grid.Column="4"  Background="Gray" Name="TextBoxSubTotalFact"/>
+                <TextBox Grid.Row="10" Grid.Column="6"  Background="Gray" Name="TextBoxSubTotalDifference"/>
          </Grid>
         </StackPanel>
     </Grid>

@@ -60,21 +60,21 @@
              <TextBlock Grid.Row="8" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="10" Grid.Column="0">Промежуточный итог</TextBlock>
 
-                <TextBox Grid.Row="2" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="2" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="4" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="6" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="8" Grid.Column="6" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="2" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="4" Text="0" Background="Gray"/>
-                <TextBox Grid.Row="10" Grid.Column="6" Text="0" Background="Gray"/>
+                <TextBox Grid.Row="2" Grid.Column="2"  Background="Gray" Name="HousePlane" TextChanged="HouseChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="4"  Background="Gray" Name="HouseFact" TextChanged="HouseChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="6"  Background="Gray" Name="HouseDifference"/>
+                <TextBox Grid.Row="4" Grid.Column="2"  Background="Gray" Name="HealthPlane" TextChanged="HealthChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="4"  Background="Gray" Name="HealthFact" TextChanged="HealthChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="6"  Background="Gray" Name="HealthDifference"/>
+                <TextBox Grid.Row="6" Grid.Column="2"  Background="Gray" Name="LifePlane" TextChanged="LifeChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="4"  Background="Gray" Name="LifeFact" TextChanged="LifeChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="6"  Background="Gray" Name="LifeDifference"/>
+                <TextBox Grid.Row="8" Grid.Column="2"  Background="Gray" Name="OtherPlane" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="8" Grid.Column="4"  Background="Gray" Name="OtherFact" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="8" Grid.Column="6"  Background="Gray" Name="OtherDifference"/>
+                <TextBox Grid.Row="10" Grid.Column="2"  Background="Gray" Name="TextBoxSubTotalPlane"/>
+                <TextBox Grid.Row="10" Grid.Column="4" Background="Gray" Name="TextBoxSubTotalFact"/>
+                <TextBox Grid.Row="10" Grid.Column="6"  Background="Gray" Name="TextBoxSubTotalDifference"/>
                 
          </Grid>
         </StackPanel>
