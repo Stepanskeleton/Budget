@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-
+using  Microsoft.Data.Sqlite;
 namespace proga;
 
 public partial class mainPage : Page
@@ -9,9 +9,7 @@ public partial class mainPage : Page
     {
         InitializeComponent();
     }
-
-
-    
+    public string way = "C:\\projects C#\\proga\\BdOne.db";
     private void PlaneIncomeUpdate(object sender, TextChangedEventArgs e)
     {
         bool flag = false;
