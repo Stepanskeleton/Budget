@@ -153,7 +153,7 @@
         <ColumnDefinition Width="*"></ColumnDefinition>
         <ColumnDefinition Width="8*"></ColumnDefinition>
     </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" >
+        <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ToolBarTray Orientation="Vertical" Background="Gray">
                 <ToolBar Background="Gray">
                     <Button Name = "MainPage"   Click="MainPage_OnClick" Style="{StaticResource {x:Type Button}}">Главная</Button>
@@ -173,7 +173,7 @@
             </ToolBarTray>
             
         </StackPanel>
-        <Frame Grid.Column="1" Name="Frame1" Source="mainPage.xaml" Frame.NavigationUIVisibility="Hidden">
+        <Frame Grid.Column="1" Name="Frame1" Source="mainPage.xaml" Frame.NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             
         </Frame>
         </Grid>

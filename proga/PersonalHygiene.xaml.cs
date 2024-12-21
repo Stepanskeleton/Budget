@@ -15,82 +15,15 @@ public partial class PersonalHygiene : Page
     public double SubTotalDifference = 0;
     Methods methods = new Methods();
     public static string way = "C:\\projects C#\\proga\\BdOne.db";
-    public void PlaneSubTotalUpdate(ref double oldValue, ref double newValue)
-
-    {
-        SubtotalPlane -= oldValue;
-        SubtotalPlane += newValue;
-        oldValue = newValue;
-        TextBoxSubTotalPlane.Text = SubtotalPlane.ToString();
-    }
-
-    public void FactSubTotalUpdate(ref double oldValue, ref double newValue, ref double value)
-
-    {
-        SubtotalFact -= oldValue;
-        SubtotalFact += newValue;
-        oldValue = newValue;
-        TextBoxSubTotalFact.Text = SubtotalFact.ToString();
-    }
-
-    public void DifferenceSubTotalUpdate(ref double oldValue, double newValue)
-
-    {
-        SubTotalDifference -= oldValue;
-        SubTotalDifference += newValue;
-        oldValue = newValue;
-        TextBoxSubTotalDifference.Text = SubTotalDifference.ToString();
-    }
-
-    public void DifferenseUpdate(ref TextBox tb1, ref TextBox tb2, ref TextBox Differense, ref double oldv,
-        ref double oldv2, ref double oldv3)
-    {
-        bool flag = false;
-        Exception? ex = null;
-        double text1 = 0, text2 = 0;
-        try
-        {
-            if (tb1.Text != null && tb2.Text != null)
-            {
-
-                text1 = Convert.ToDouble(tb1.Text.ToString());
-                text2 = Convert.ToDouble(tb2.Text.ToString());
-                flag = true;
-            }
-
-
-        }
-        catch (Exception exception)
-        {
-            ex = exception;
-        }
-
-        if (flag)
-        {
-            Differense.Text = (text1 - text2).ToString();
-            PlaneSubTotalUpdate(ref oldv, ref text1);
-            FactSubTotalUpdate(ref oldv2, ref text2, ref SubtotalFact);
-            DifferenceSubTotalUpdate(ref oldv3, (text1 - text2));
-        }
-    }
-
-    public double PlaneOld = 0;
-    public double FactOld = 0;
-    public double DifferenceOld = 0;
-
-    private void ChangeText(object sender, TextChangedEventArgs e)
-    {
-
-    }
-
+  
     public double MedicinePlaneOld = 0;
     public double MedicineFactOld = 0;
     public double MedicineDifferenceOld = 0;
 
     private void MedicineChangeText(object sender, TextChangedEventArgs e)
     {
-        DifferenseUpdate(ref MedicinePlane, ref MedicineFact, ref MedicineDifference, ref MedicinePlaneOld,
-            ref MedicineFactOld, ref MedicineDifferenceOld);
+        methods.DifferenseUpdate(ref MedicinePlane, ref MedicineFact, ref MedicineDifference, ref MedicinePlaneOld,
+            ref MedicineFactOld, ref MedicineDifferenceOld, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,0,"Medicine");
     }
 
     public double HairAndNailCarePlaneOld = 0;
@@ -99,8 +32,8 @@ public partial class PersonalHygiene : Page
 
     private void HairAndNailCareChangeText(object sender, TextChangedEventArgs e)
     {
-        DifferenseUpdate(ref HairAndNailCarePlane, ref HairAndNailCareFact, ref HairAndNailCareDifference,
-            ref HairAndNailCarePlaneOld, ref HairAndNailCareFactOld, ref HairAndNailCareDifferenceOld);
+        methods.DifferenseUpdate(ref HairAndNailCarePlane, ref HairAndNailCareFact, ref HairAndNailCareDifference,
+            ref HairAndNailCarePlaneOld, ref HairAndNailCareFactOld, ref HairAndNailCareDifferenceOld, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,1,"HairAndNailCare");
     }
     public double ClothesPlaneOld = 0;
     public double ClothesFactOld = 0;
@@ -108,7 +41,7 @@ public partial class PersonalHygiene : Page
 
     private void ClothesChangeText(object sender, TextChangedEventArgs e)
     {
-        DifferenseUpdate(ref ClothesPlane, ref ClothesFact, ref ClothesDifference, ref ClothesPlaneOld, ref ClothesFactOld, ref ClothesDifferenceOld);
+        methods.DifferenseUpdate(ref ClothesPlane, ref ClothesFact, ref ClothesDifference, ref ClothesPlaneOld, ref ClothesFactOld, ref ClothesDifferenceOld, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,2,"Clothes");
     }
     public double DryCleaningPlaneOld = 0;
     public double DryCleaningFactOld = 0;
@@ -116,7 +49,7 @@ public partial class PersonalHygiene : Page
 
     private void DryCleaningChangeText(object sender, TextChangedEventArgs e)
     {
-        DifferenseUpdate(ref DryCleaningPlane, ref DryCleaningFact, ref DryCleaningDifference, ref DryCleaningPlaneOld, ref DryCleaningFactOld, ref DryCleaningDifferenceOld);
+        methods.DifferenseUpdate(ref DryCleaningPlane, ref DryCleaningFact, ref DryCleaningDifference, ref DryCleaningPlaneOld, ref DryCleaningFactOld, ref DryCleaningDifferenceOld, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,3,"DryCleaning");
     }
     public double GYMPlanePlaneOld = 0;
     public double GYMPFactOld = 0;
@@ -124,7 +57,7 @@ public partial class PersonalHygiene : Page
 
     private void GYMChangeText(object sender, TextChangedEventArgs e)
     {
-        DifferenseUpdate(ref GYMPlane, ref GYMFact, ref GYMDifference, ref GYMPlanePlaneOld, ref GYMPFactOld, ref GYMDifferenceOld);
+        methods.DifferenseUpdate(ref GYMPlane, ref GYMFact, ref GYMDifference, ref GYMPlanePlaneOld, ref GYMPFactOld, ref GYMDifferenceOld, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,4,"GYM");
     }
     public double OrgTaxesPlaneOld = 0;
     public double OrgTaxesFactOld = 0;
@@ -132,7 +65,7 @@ public partial class PersonalHygiene : Page
 
     private void OrgTaxesChangeText(object sender, TextChangedEventArgs e)
     {
-        DifferenseUpdate(ref OrgTaxesPlane, ref OrgTaxesFact, ref OrgTaxesDifference, ref OrgTaxesPlaneOld, ref OrgTaxesFactOld, ref OrgTaxesDifferenceOld);
+        methods.DifferenseUpdate(ref OrgTaxesPlane, ref OrgTaxesFact, ref OrgTaxesDifference, ref OrgTaxesPlaneOld, ref OrgTaxesFactOld, ref OrgTaxesDifferenceOld, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,5,"OrgTaxes");
     }
     public double OtherPlaneOld = 0;
     public double OtherFactOld = 0;
@@ -140,12 +73,12 @@ public partial class PersonalHygiene : Page
 
     private void OtherChangeText(object sender, TextChangedEventArgs e)
     {
-        DifferenseUpdate(ref OtherPlane, ref OtherFact, ref OtherDifference, ref OtherPlaneOld, ref OtherFactOld, ref OtherDifferenceOld);
+        methods.DifferenseUpdate(ref OtherPlane, ref OtherFact, ref OtherDifference, ref OtherPlaneOld, ref OtherFactOld, ref OtherDifferenceOld, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,6,"Other");
     }
 
     private void PersonalHygiene_OnLoaded(object sender, RoutedEventArgs e)
     {
-        methods.dbName = "gifts_and_donations";
+        methods.dbName = "PersonalHygiene";
         if (methods.db.GetEntireTable(4, out methods.data, methods.dbName))
         {
             SubtotalPlane = Convert.ToDouble(methods.data[methods.data.Count - 1][1]);
@@ -154,7 +87,14 @@ public partial class PersonalHygiene : Page
             TextBoxSubTotalFact.Text = SubtotalPlane.ToString();
             SubTotalDifference = Convert.ToDouble(methods.data[methods.data.Count - 1][3]);
             TextBoxSubTotalDifference.Text = SubTotalDifference.ToString();
-         
+            methods.TextBoxAnd_OldValuesUpdate(ref MedicinePlane, ref MedicineFact, ref MedicineDifference, ref methods.data[0][1], ref methods.data[0][2], ref methods.data[0][3], ref MedicinePlaneOld, ref MedicineFactOld, ref MedicineDifferenceOld);
+            methods.TextBoxAnd_OldValuesUpdate(ref HairAndNailCarePlane, ref HairAndNailCareFact, ref HairAndNailCareDifference, ref methods.data[1][1], ref methods.data[1][2], ref methods.data[1][3], ref HairAndNailCarePlaneOld, ref HairAndNailCareFactOld, ref HairAndNailCareDifferenceOld);
+            methods.TextBoxAnd_OldValuesUpdate(ref ClothesPlane, ref ClothesFact, ref ClothesDifference, ref methods.data[2][1], ref methods.data[2][2], ref methods.data[2][3], ref ClothesPlaneOld, ref ClothesFactOld, ref ClothesDifferenceOld);
+            methods.TextBoxAnd_OldValuesUpdate(ref DryCleaningPlane, ref DryCleaningFact, ref DryCleaningDifference, ref methods.data[3][1], ref methods.data[3][2], ref methods.data[3][3], ref DryCleaningPlaneOld, ref DryCleaningFactOld, ref DryCleaningDifferenceOld);
+            methods.TextBoxAnd_OldValuesUpdate(ref GYMPlane, ref GYMFact, ref GYMDifference, ref methods.data[4][1], ref methods.data[4][2], ref methods.data[4][3], ref GYMPlanePlaneOld, ref GYMPFactOld, ref GYMDifferenceOld);
+            methods.TextBoxAnd_OldValuesUpdate(ref OrgTaxesPlane, ref OrgTaxesFact, ref OrgTaxesDifference, ref methods.data[5][1], ref methods.data[5][2], ref methods.data[5][3], ref OrgTaxesPlaneOld, ref OrgTaxesFactOld, ref OrgTaxesDifferenceOld);
+            methods.TextBoxAnd_OldValuesUpdate(ref OtherPlane, ref OtherFact, ref OtherDifference, ref methods.data[6][1], ref methods.data[6][2], ref methods.data[6][3], ref OtherPlaneOld, ref OtherFactOld, ref OtherDifferenceOld);
+            
         }
     }
 }
