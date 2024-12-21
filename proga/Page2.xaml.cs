@@ -74,6 +74,7 @@ public partial class Page2 : Page
         oldValue = newValue;
         TextBoxSubTotalDifference.Text = SubTotalDifference.ToString();
         data[10][3] = SubTotalDifference.ToString();
+        UpdateDB("Name","TextBoxSubTotal","Difference",SubtotalPlane - SubtotalFact);
     }
     /// <summary>
     /// 

@@ -36,6 +36,7 @@ public partial class entertainment : Page
         SubtotalPlane+= newValue;
         oldValue = newValue;
         TextBoxSubTotalPlane.Text = SubtotalPlane.ToString();
+        UpdateDB("Name","TextBoxSubTotal","Plane", SubtotalPlane);
     }
     public void FactSubTotalUpdate(ref double oldValue, ref double newValue, ref double value)
     
@@ -44,6 +45,7 @@ public partial class entertainment : Page
         SubtotalFact += newValue;
         oldValue = newValue;
         TextBoxSubTotalFact.Text = SubtotalFact.ToString();
+        UpdateDB("Name","TextBoxSubTotal","Fact", SubtotalFact);
     }
     public void DifferenceSubTotalUpdate(ref double oldValue,double newValue)
     
@@ -123,6 +125,7 @@ public partial class entertainment : Page
     private void SportIventsText(object sender, TextChangedEventArgs e)
     {
         DifferenseUpdate(ref SportsIventsPlane, ref SportsIventsFact, ref SportsIventsDifference, ref  SportIventsPlaneOld, ref SportIventsFactOld, ref SportIventsDifferenceOld, 4,"SportsIvents");
+        
     }
     public double TheatrePlaneOld = 0;
     public double  TheatreFactOld = 0;

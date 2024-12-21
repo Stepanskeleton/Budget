@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace proga;
 
@@ -11,60 +12,10 @@ public partial class food : Page
     public double SubtotalPlane = 0;
     public double SubtotalFact = 0;
     public double SubTotalDifference = 0;
-    public void PlaneSubTotalUpdate(ref double oldValue, ref double newValue)
+    Methods methods = new Methods();
+    public static string way = "C:\\projects C#\\proga\\BdOne.db";
     
-    {
-        SubtotalPlane -= oldValue;
-        SubtotalPlane+= newValue;
-        oldValue = newValue;
-        TextBoxSubTotalPlane.Text = SubtotalPlane.ToString();
-    }
-    public void FactSubTotalUpdate(ref double oldValue, ref double newValue, ref double value)
     
-    {
-        SubtotalFact -= oldValue;
-        SubtotalFact += newValue;
-        oldValue = newValue;
-        TextBoxSubTotalFact.Text = SubtotalFact.ToString();
-    }
-    public void DifferenceSubTotalUpdate(ref double oldValue,double newValue)
-    
-    {
-        SubTotalDifference -= oldValue;
-        SubTotalDifference += newValue;
-        oldValue = newValue;
-        TextBoxSubTotalDifference.Text = SubTotalDifference.ToString();
-    }
-    public void DifferenseUpdate(ref TextBox tb1, ref TextBox tb2, ref TextBox Differense, ref double oldv, ref double oldv2, ref double oldv3)
-    {
-        bool flag = false;
-        Exception? ex = null;
-        double text1 = 0, text2 = 0;
-        try
-        {
-            if (tb1.Text != null && tb2.Text != null)
-            {
-                
-                text1 = Convert.ToDouble(tb1.Text.ToString());
-                text2 = Convert.ToDouble(tb2.Text.ToString());
-                flag = true;
-            }
-            
-            
-        }
-        catch (Exception exception)
-        {
-            ex = exception;
-        }
-
-        if (flag)
-        {
-            Differense.Text = (text1 - text2).ToString();
-            PlaneSubTotalUpdate(ref oldv,ref text1);
-            FactSubTotalUpdate(ref oldv2 , ref text2,ref SubtotalFact);
-            DifferenceSubTotalUpdate(ref oldv3,(text1 - text2));
-        }
-    }
     public double PlaneOld = 0;
     public double FactOld = 0;
     public double DifferenceOld= 0;
@@ -77,20 +28,37 @@ public partial class food : Page
     public double FoodsDifferenceOld= 0;
     private void FoodsChangeText(object sender, TextChangedEventArgs e)
     {
-       DifferenseUpdate(ref FoodsPlane, ref FoodsFact, ref FoodsDifference, ref FoodsPlaneOld, ref FoodsFactOld, ref FoodsDifferenceOld);
+       methods.DifferenseUpdate(ref FoodsPlane, ref FoodsFact, ref FoodsDifference, ref FoodsPlaneOld, ref FoodsFactOld, ref FoodsDifferenceOld, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,0, "Foods");
     }
     public double RestaurantPlaneOld = 0;
     public double RestaurantFactOld = 0;
     public double RestaurantDifferenceOld= 0;
     private void RestaurantChangeText(object sender, TextChangedEventArgs e)
     {
-       DifferenseUpdate(ref RestaurantPlane, ref RestaurantFact, ref RestaurantDifference, ref RestaurantPlaneOld, ref RestaurantFactOld, ref RestaurantDifferenceOld);
+       methods.DifferenseUpdate(ref RestaurantPlane, ref RestaurantFact, ref RestaurantDifference, ref RestaurantPlaneOld, ref RestaurantFactOld, ref RestaurantDifferenceOld, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,1, "Restaurant");
     }
     public double OtherPlaneOld = 0;
     public double OtherFactOld = 0;
     public double OtherDifferenceOld= 0;
     private void OtherChangeText(object sender, TextChangedEventArgs e)
     {
-       DifferenseUpdate(ref OtherPlane, ref OtherFact, ref OtherDifference, ref OtherPlaneOld, ref OtherFactOld, ref OtherDifferenceOld);
+       methods.DifferenseUpdate(ref OtherPlane, ref OtherFact, ref OtherDifference, ref OtherPlaneOld, ref OtherFactOld, ref OtherDifferenceOld, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,3, "Other");
+    }
+
+    private void Food_OnLoaded(object sender, RoutedEventArgs e)
+    {
+        methods.dbName = "food";
+        if (methods.db.GetEntireTable(4, out methods.data, methods.dbName))
+        {
+            SubtotalPlane = Convert.ToDouble(methods.data[methods.data.Count -1][1]);
+            TextBoxSubTotalPlane.Text = SubtotalPlane.ToString();
+            SubtotalFact = Convert.ToDouble(methods.data[methods.data.Count - 1][2]);
+            TextBoxSubTotalFact.Text = SubtotalPlane.ToString();
+            SubTotalDifference = Convert.ToDouble(methods.data[methods.data.Count -1 ][3]);
+            TextBoxSubTotalDifference.Text = SubTotalDifference.ToString();
+            methods.TextBoxAnd_OldValuesUpdate(ref FoodsPlane, ref FoodsFact, ref FoodsDifference, ref methods.data[0][1], ref methods.data[0][2], ref methods.data[0][3], ref FoodsPlaneOld, ref FoodsFactOld, ref FoodsDifferenceOld);
+            methods.TextBoxAnd_OldValuesUpdate(ref RestaurantPlane, ref RestaurantFact, ref RestaurantDifference,ref methods.data[1][1], ref methods.data[1][2], ref  methods.data[1][3], ref RestaurantPlaneOld, ref RestaurantFactOld, ref RestaurantDifferenceOld);
+            methods.TextBoxAnd_OldValuesUpdate(ref OtherPlane, ref OtherFact, ref OtherDifference, ref  methods.data[2][1], ref methods.data[2][2], ref methods.data[2][3], ref OtherPlaneOld, ref OtherFactOld, ref OtherDifferenceOld);
+        }
     }
 }

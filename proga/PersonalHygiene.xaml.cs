@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace proga;
 
@@ -12,7 +13,8 @@ public partial class PersonalHygiene : Page
     public double SubtotalPlane = 0;
     public double SubtotalFact = 0;
     public double SubTotalDifference = 0;
-
+    Methods methods = new Methods();
+    public static string way = "C:\\projects C#\\proga\\BdOne.db";
     public void PlaneSubTotalUpdate(ref double oldValue, ref double newValue)
 
     {
@@ -139,5 +141,20 @@ public partial class PersonalHygiene : Page
     private void OtherChangeText(object sender, TextChangedEventArgs e)
     {
         DifferenseUpdate(ref OtherPlane, ref OtherFact, ref OtherDifference, ref OtherPlaneOld, ref OtherFactOld, ref OtherDifferenceOld);
+    }
+
+    private void PersonalHygiene_OnLoaded(object sender, RoutedEventArgs e)
+    {
+        methods.dbName = "gifts_and_donations";
+        if (methods.db.GetEntireTable(4, out methods.data, methods.dbName))
+        {
+            SubtotalPlane = Convert.ToDouble(methods.data[methods.data.Count - 1][1]);
+            TextBoxSubTotalPlane.Text = SubtotalPlane.ToString();
+            SubtotalFact = Convert.ToDouble(methods.data[methods.data.Count - 1][2]);
+            TextBoxSubTotalFact.Text = SubtotalPlane.ToString();
+            SubTotalDifference = Convert.ToDouble(methods.data[methods.data.Count - 1][3]);
+            TextBoxSubTotalDifference.Text = SubTotalDifference.ToString();
+         
+        }
     }
 }
