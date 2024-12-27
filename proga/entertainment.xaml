@@ -3,10 +3,21 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
       xmlns:local="clr-namespace:proga"
       mc:Ignorable="d"
       Loaded="Entertainment_OnLoaded"
-      Title="entertainment" Height="450" Width="800" Background="Gray">
+      Title="entertainment" Height="450" Width="800" Background="#403e3e">
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid>
         <Grid.ColumnDefinitions>
@@ -79,37 +90,52 @@
              <TextBlock Grid.Row="16" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="18" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="20" Grid.Column="0">Промежуточный итог</TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="2"  Background="Gray" Name = "VideoPlane" TextChanged="VideoChangeText"/>
-                <TextBox Grid.Row="2" Grid.Column="4"  Background="Gray" Name = "VideoFact"  TextChanged="VideoChangeText"/>
-                <TextBox Grid.Row="2" Grid.Column="6" IsReadOnly="True" Name = "VideoDifferent" Background="Gray" />
-                <TextBox Grid.Row="4" Grid.Column="2"  Background="Gray" Name = "MusicPlane" TextChanged="MusicChangeText"/>
-                <TextBox Grid.Row="4" Grid.Column="4"  Background="Gray" Name = "MusicFact" TextChanged="MusicChangeText"/>
-                <TextBox IsReadOnly="True" Grid.Row="4" Grid.Column="6"  Background="Gray" Name = "MusicDifferent"/>
-                <TextBox Grid.Row="6" Grid.Column="2"  Background="Gray" Name = "FilmsPlane" TextChanged="FilmChangeText" />
-                <TextBox Grid.Row="6" Grid.Column="4"  Background="Gray" Name = "FilmFact" TextChanged="FilmChangeText"/>
-                <TextBox Grid.Row="6" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "FilmsDifferent"/>
-                <TextBox Grid.Row="8" Grid.Column="2"  Background="Gray" Name = "ConcertsPlane" TextChanged="ConcertsText"/>
-                <TextBox Grid.Row="8" Grid.Column="4"  Background="Gray" Name = "ConcertsFact" TextChanged="ConcertsText"/>
-                <TextBox IsReadOnly="True" Grid.Row="8" Grid.Column="6"  Background="Gray" Name = "ConcertsDifference"/>
-                <TextBox Grid.Row="10" Grid.Column="2"  Background="Gray" Name = "SportsIventsPlane" TextChanged="SportIventsText"/>
-                <TextBox Grid.Row="10" Grid.Column="4"  Background="Gray" Name = "SportsIventsFact" TextChanged="SportIventsText"/>
-                <TextBox IsReadOnly="True" Grid.Row="10" Grid.Column="6"  Background="Gray" Name = "SportsIventsDifference"/>
-                <TextBox Grid.Row="12" Grid.Column="2"  Background="Gray" Name = "TheatrePlane" TextChanged="TheatreText" />
-                <TextBox Grid.Row="12" Grid.Column="4"  Background="Gray" Name = "TheatreFact" TextChanged="TheatreText"/>
-                <TextBox Grid.Row="12" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "TheatreDifferent"/>
-                <TextBox Grid.Row="14" Grid.Column="2"  Background="Gray" Name = "Other1Plane" TextChanged="Other1Text"/>
-                <TextBox Grid.Row="14" Grid.Column="4"  Background="Gray" Name = "Other1Fact" TextChanged="Other1Text"/>
-                <TextBox Grid.Row="14" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "Other1Difference"/>
-                <TextBox Grid.Row="16" Grid.Column="2"  Background="Gray" Name = "Other2Plane" TextChanged="Other2Text"/>
-                <TextBox Grid.Row="16" Grid.Column="4"  Background="Gray" Name = "Other2Fact" TextChanged="Other2Text"/>
-                <TextBox Grid.Row="16" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "Other2Difference"/>
-                <TextBox Grid.Row="18" Grid.Column="2"  Background="Gray" Name ="Other3Plane" TextChanged="Other3Text"/>
-                <TextBox Grid.Row="18" Grid.Column="4"  Background="Gray" Name = "Other3Fact" TextChanged="Other3Text"/>
-                <TextBox Grid.Row="18" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "Other3Difference"/>
-                <TextBox Grid.Row="20" Grid.Column="2" IsReadOnly="True" Background="Gray" Name = "TextBoxSubTotalPlane"/>
-                <TextBox Grid.Row="20" Grid.Column="4" IsReadOnly="True" Background="Gray" Name = "TextBoxSubTotalFact"/>
-                <TextBox Grid.Row="20" Grid.Column="6" IsReadOnly="True" Background="Gray" Name = "TextBoxSubTotalDifference"/>
+                <TextBox Grid.Row="2" Grid.Column="2"   Name = "VideoPlane" TextChanged="VideoChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="4"   Name = "VideoFact"  TextChanged="VideoChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="6" IsReadOnly="True" Name = "VideoDifferent" />
+                <TextBox Grid.Row="4" Grid.Column="2"   Name = "MusicPlane" TextChanged="MusicChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="4"   Name = "MusicFact" TextChanged="MusicChangeText"/>
+                <TextBox IsReadOnly="True" Grid.Row="4" Grid.Column="6"   Name = "MusicDifferent"/>
+                <TextBox Grid.Row="6" Grid.Column="2"  Name = "FilmsPlane" TextChanged="FilmChangeText" />
+                <TextBox Grid.Row="6" Grid.Column="4"   Name = "FilmFact" TextChanged="FilmChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="6" IsReadOnly="True"  Name = "FilmsDifferent"/>
+                <TextBox Grid.Row="8" Grid.Column="2"  Name = "ConcertsPlane" TextChanged="ConcertsText"/>
+                <TextBox Grid.Row="8" Grid.Column="4"   Name = "ConcertsFact" TextChanged="ConcertsText"/>
+                <TextBox IsReadOnly="True" Grid.Row="8" Grid.Column="6"   Name = "ConcertsDifference"/>
+                <TextBox Grid.Row="10" Grid.Column="2"   Name = "SportsIventsPlane" TextChanged="SportIventsText"/>
+                <TextBox Grid.Row="10" Grid.Column="4"   Name = "SportsIventsFact" TextChanged="SportIventsText"/>
+                <TextBox IsReadOnly="True" Grid.Row="10" Grid.Column="6"   Name = "SportsIventsDifference"/>
+                <TextBox Grid.Row="12" Grid.Column="2"   Name = "TheatrePlane" TextChanged="TheatreText" />
+                <TextBox Grid.Row="12" Grid.Column="4"   Name = "TheatreFact" TextChanged="TheatreText"/>
+                <TextBox Grid.Row="12" Grid.Column="6" IsReadOnly="True"  Name = "TheatreDifferent"/>
+                <TextBox Grid.Row="14" Grid.Column="2"   Name = "Other1Plane" TextChanged="Other1Text"/>
+                <TextBox Grid.Row="14" Grid.Column="4"   Name = "Other1Fact" TextChanged="Other1Text"/>
+                <TextBox Grid.Row="14" Grid.Column="6" IsReadOnly="True"  Name = "Other1Difference"/>
+                <TextBox Grid.Row="16" Grid.Column="2"   Name = "Other2Plane" TextChanged="Other2Text"/>
+                <TextBox Grid.Row="16" Grid.Column="4"   Name = "Other2Fact" TextChanged="Other2Text"/>
+                <TextBox Grid.Row="16" Grid.Column="6" IsReadOnly="True"  Name = "Other2Difference"/>
+                <TextBox Grid.Row="18" Grid.Column="2"   Name ="Other3Plane" TextChanged="Other3Text"/>
+                <TextBox Grid.Row="18" Grid.Column="4"   Name = "Other3Fact" TextChanged="Other3Text"/>
+                <TextBox Grid.Row="18" Grid.Column="6" IsReadOnly="True"  Name = "Other3Difference"/>
+                <TextBox Grid.Row="20" Grid.Column="2" IsReadOnly="True"  Name = "TextBoxSubTotalPlane"/>
+                <TextBox Grid.Row="20" Grid.Column="4" IsReadOnly="True"  Name = "TextBoxSubTotalFact"/>
+                <TextBox Grid.Row="20" Grid.Column="6" IsReadOnly="True"  Name = "TextBoxSubTotalDifference"/>
          </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                
+                <lvc:CartesianChart
+                    Grid.Row="0"
+                    Series="{Binding Series}"
+                    XAxes="{Binding ScrollableAxes}"
+                    ZoomMode="X"
+                    DrawMargin="{Binding Margin}">
+                </lvc:CartesianChart>
+                
+            </Grid>
         </StackPanel>
     </Grid>
     </Grid>

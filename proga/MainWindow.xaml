@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:proga"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="Gray">
+        Title="MainWindow" Height="450" Width="800" Background="#403e3e">
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
     <Window.Resources>
         <ControlTemplate x:Key="stylered" TargetType="ListBoxItem">
             <Border Background="{TemplateBinding Background}"
@@ -155,8 +158,8 @@
     </Grid.ColumnDefinitions>
         <Viewbox Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <ToolBarTray Orientation="Vertical" Background="Gray">
-                <ToolBar Background="Gray">
+            <ToolBarTray Orientation="Vertical" Background="#403e3e">
+                <ToolBar Background="#403e3e">
                     <Button Name = "MainPage"   Click="MainPage_OnClick" Style="{StaticResource {x:Type Button}}">Главная</Button>
                     <Button Name = "Home"   Click="Home_OnClick" Style="{StaticResource {x:Type Button}}">Жильё</Button>
                     <Button Name="Entertainment"   Click="Entertainment_OnClick" Style="{StaticResource {x:Type Button}}">Развлечения</Button>

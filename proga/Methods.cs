@@ -9,8 +9,11 @@ public  class Methods
     public double SubTotalDifference = 0;
     public static string way = "C:\\projects C#\\proga\\BdOne.db";
     public string dbName = "entertainment";
+    public List<double> Planevalues = new List<double>();
+    public List<double> Factvalues = new List<double>();
     public List<string[]> data = new List<string[]>();
     public  db_control db = new db_control(way);
+    public ViewModel viewmodel = new ViewModel();
     public void TextBoxAnd_OldValuesUpdate(ref TextBox textBoxPlane, ref TextBox textboxFact, ref TextBox TbDifference,ref  string NewPlane,ref string NewFact, ref string NewTbDifference, ref double oldPlane, ref double oldFact, ref double oldTbDifference)
     {
         textBoxPlane.Text = NewPlane;
@@ -19,6 +22,8 @@ public  class Methods
         oldPlane = Convert.ToDouble(textBoxPlane.Text);
         oldFact = Convert.ToDouble(textboxFact.Text);
         oldTbDifference = Convert.ToDouble(TbDifference.Text);
+        Planevalues.Add(oldPlane);
+        Factvalues.Add(oldFact);
     }
     public void UpdateDB(string fname, string fvalue, string chname, double value)
     {
@@ -51,7 +56,7 @@ public  class Methods
         TextBoxSubTotalDifference.Text = this.SubTotalDifference.ToString();
         this.UpdateDB("Name","TextBoxSubTotal","Difference", this.SubTotalDifference);
     }
-    public void DifferenseUpdate(ref TextBox tb1, ref TextBox tb2, ref TextBox Differense, ref double oldv, ref double oldv2, ref double oldv3, ref TextBox TextBoxSubTotalPlane, ref TextBox TextBoxSubTotalFact, ref TextBox TextBoxSubTotalDifference,int n = 0, string Name11 = "")
+    public void DifferenseUpdate(ref TextBox tb1, ref TextBox tb2, ref TextBox Differense, ref double oldv, ref double oldv2, ref double oldv3, ref TextBox TextBoxSubTotalPlane, ref TextBox TextBoxSubTotalFact, ref TextBox TextBoxSubTotalDifference,int n, string Name11)
     {
         bool flag = false;
         Exception? ex = null;
@@ -82,6 +87,11 @@ public  class Methods
             data[n][1] = text1.ToString();
             data[n][2] = text2.ToString();
             data[n][3] = (text1 - text2).ToString();
+            if (n < Planevalues.Count)
+            {
+                Planevalues[n] = text1;
+                Factvalues[n] = text2;
+            };
             this.UpdateDB("Name",Name11,"Plane", text1);
             this.UpdateDB("Name",Name11,"Fact", text2);
             this.UpdateDB("Name", Name11, "Difference",(text1 - text2));

@@ -46,9 +46,33 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
+            "LiveChartsCore": {
+              "target": "Package",
+              "version": "[2.0.0-rc4.5, )"
+            },
+            "LiveChartsCore.SkiaSharpView": {
+              "target": "Package",
+              "version": "[2.0.0-rc4.5, )"
+            },
+            "LiveChartsCore.SkiaSharpView.WPF": {
+              "target": "Package",
+              "version": "[2.0.0-rc4.5, )"
+            },
             "Microsoft.Data.Sqlite": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[3.118.0-preview.2.3, )"
+            },
+            "SkiaSharp.Views": {
+              "target": "Package",
+              "version": "[3.118.0-preview.2.3, )"
             }
           },
           "imports": [

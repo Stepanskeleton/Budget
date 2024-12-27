@@ -3,11 +3,20 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
       xmlns:local="clr-namespace:proga"
       Loaded="MainPage_OnLoaded"
       mc:Ignorable="d"
-      Title="mainPage" Height="450" Width="800" Background="Gray">
+      Title="mainPage" Height="450" Width="800" Background="#403e3e">
     <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
         <ControlTemplate x:Key="stylered" TargetType="ListBoxItem">
             <Border Background="{TemplateBinding Background}"
                                
@@ -187,9 +196,9 @@
                    
                     <TextBlock Grid.Column="0" Grid.Row="3" Margin="10">Дополнительный доход</TextBlock>
                     <TextBlock Grid.Row="5" Grid.Column="0" Margin="10">Общие доходы за месяц</TextBlock>
-                    <TextBox Grid.Column="2" Grid.Row="1" Background="Gray" Name="PlaneIncome1_tb" TextChanged="PlaneIncomeUpdate" ></TextBox>
-                    <TextBox Grid.Column="2" Grid.Row="3" Background="Gray" Name="PlaneadditionalIncome_tb" TextChanged="PlaneIncomeUpdate" ></TextBox>
-                    <TextBox Grid.Column="2" Grid.Row="5" Background="Gray" Name="TotalIncome_tb" IsReadOnly="True"></TextBox>
+                    <TextBox Grid.Column="2" Grid.Row="1"  Name="PlaneIncome1_tb" TextChanged="PlaneIncomeUpdate" ></TextBox>
+                    <TextBox Grid.Column="2" Grid.Row="3"  Name="PlaneadditionalIncome_tb" TextChanged="PlaneIncomeUpdate" ></TextBox>
+                    <TextBox Grid.Column="2" Grid.Row="5"  Name="TotalIncome_tb" IsReadOnly="True"></TextBox>
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="0" Margin="10" HorizontalAlignment="Stretch">
@@ -218,9 +227,9 @@
                     <TextBlock Grid.Column="0" Grid.Row="1" Margin="10">Доход 1</TextBlock>
                     <TextBlock Grid.Column="0" Grid.Row="3" Margin="10">Дополнительный доход</TextBlock>
                     <TextBlock Grid.Row="5" Grid.Column="0" Margin="10">Общие доходы за месяц</TextBlock>
-                    <TextBox Grid.Column="2" Grid.Row="1" Background="Gray" Name="FactIncome1_tb" TextChanged="FactIncomeUpdate"></TextBox>
-                    <TextBox Grid.Column="2" Grid.Row="3" Background="Gray" Name="FactAdditionalIncome_tb"  TextChanged="FactIncomeUpdate"></TextBox>
-                    <TextBox Grid.Column="2" Grid.Row="5" Background="Gray" Name="FactTotalIncome_tb" IsReadOnly="True" ></TextBox>
+                    <TextBox Grid.Column="2" Grid.Row="1"  Name="FactIncome1_tb" TextChanged="FactIncomeUpdate"></TextBox>
+                    <TextBox Grid.Column="2" Grid.Row="3"  Name="FactAdditionalIncome_tb"  TextChanged="FactIncomeUpdate"></TextBox>
+                    <TextBox Grid.Column="2" Grid.Row="5"  Name="FactTotalIncome_tb" IsReadOnly="True" ></TextBox>
                 </Grid>
             </StackPanel>
             
@@ -248,9 +257,9 @@
                     <TextBlock Grid.Column="0" Grid.Row="1" Margin="10">Плановый остаток</TextBlock>
                     <TextBlock Grid.Column="0" Grid.Row="3" Margin="10">Фактический остаток</TextBlock>
                     <TextBlock Grid.Row="5" Grid.Column="0" Margin="10">Разница</TextBlock>
-                    <TextBlock Grid.Column="2" Grid.Row="1" Background="Gray" Name="PlannedBalance" ></TextBlock>
-                    <TextBlock Grid.Column="2" Grid.Row="3" Background="Gray" Name="FactBalance" ></TextBlock>
-                    <TextBlock Grid.Column="2" Grid.Row="5" Background="Gray" Name="Difference" ></TextBlock>
+                    <TextBlock Grid.Column="2" Grid.Row="1"  Name="PlannedBalance" ></TextBlock>
+                    <TextBlock Grid.Column="2" Grid.Row="3"  Name="FactBalance" ></TextBlock>
+                    <TextBlock Grid.Column="2" Grid.Row="5"  Name="Difference" ></TextBlock>
                 </Grid>
             </StackPanel>
         </Grid>

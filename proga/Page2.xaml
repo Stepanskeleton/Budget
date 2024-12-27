@@ -5,8 +5,22 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:proga"
       mc:Ignorable="d"
+      xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
       Loaded="Page2_OnLoaded"
-      Title="Page2" Height="450" Width="800" Background="Gray">
+      Title="Page2" Height="600" Width="1000" Background="#403e3e">
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Page.Resources>
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -83,40 +97,55 @@
              <TextBlock Grid.Row="20" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="22" Grid.Column="0">Промежуточный итог</TextBlock>
 
-                <TextBox Grid.Row="2" Grid.Column="2"  Background="Gray" TextChanged="MortgageOrRentChangeText" Name = "MortgageOrRentPlane"/>
-                <TextBox Grid.Row="2" Grid.Column="4"  Background="Gray" TextChanged="MortgageOrRentChangeText" Name = "MortgageOrRentFact"/>
-                <TextBox Grid.Row="2" Grid.Column="6"  Background="Gray" IsReadOnly="True" x:Name = "MortgageOrRentDifference"/>
-                <TextBox Grid.Row="4" Grid.Column="2"  Background="Gray" TextChanged="TelephoneChangeText" Name = "TelephonePlane"/>
-                <TextBox Grid.Row="4" Grid.Column="4"  Background="Gray" TextChanged="TelephoneChangeText" Name = "TelephoneFact"/>
-                <TextBox Grid.Row="4" Grid.Column="6"  Background="Gray" IsReadOnly="True" Name = "TelephoneDifference"/>
-                <TextBox Grid.Row="6" Grid.Column="2"  Background="Gray" TextChanged="ElectricityChangeText" Name = "ElectricityPlane"/>
-                <TextBox Grid.Row="6" Grid.Column="4"  Background="Gray" TextChanged="ElectricityChangeText" Name = "ElectricityFact"/>
-                <TextBox Grid.Row="6" Grid.Column="6"  Background="Gray" IsReadOnly="True" Name = "ElectricityDifference"/>
-                <TextBox Grid.Row="8" Grid.Column="2"  Background="Gray" TextChanged="GasChangeText" Name="GasPlane"/>
-                <TextBox Grid.Row="8" Grid.Column="4"  Background="Gray" TextChanged="GasChangeText" Name="GasFact" />
-                <TextBox Grid.Row="8" Grid.Column="6"  Background="Gray" IsReadOnly="True" Name="GasDifferent"/>
-                <TextBox Grid.Row="10" Grid.Column="2"  Background="Gray" TextChanged="WaterSupplyAndSewerageChangeText" Name="WaterSupplyAndSeweragePlane"/>
-                <TextBox Grid.Row="10" Grid.Column="4"  Background="Gray" TextChanged="WaterSupplyAndSewerageChangeText" Name="WaterSupplyAndSewerageFact"/>
-                <TextBox Grid.Row="10" Grid.Column="6"  Background="Gray" IsReadOnly="True" Name = "WaterSupplyAndSewerageDifference"/>
-                <TextBox Grid.Row="12" Grid.Column="2"  Background="Gray" TextChanged="TvChangeText" Name = "TvPlane"/>
-                <TextBox Grid.Row="12" Grid.Column="4"  Background="Gray" TextChanged="TvChangeText" Name = "TvFact"/>
-                <TextBox Grid.Row="12" Grid.Column="6"  Background="Gray" IsReadOnly="True" Name = "TvDifference"/>
-                <TextBox Grid.Row="14" Grid.Column="2"  Background="Gray" TextChanged="GarbageRemovalChangeText" Name = "GarbagePlane"/>
-                <TextBox Grid.Row="14" Grid.Column="4"  Background="Gray" TextChanged="GarbageRemovalChangeText" Name = "GarbageFact"/>
-                <TextBox Grid.Row="14" Grid.Column="6"  Background="Gray" IsReadOnly="True" Name="GarbageDifference"/>
-                <TextBox Grid.Row="16" Grid.Column="2"  Background="Gray" TextChanged="RepairOrMaintenanceChangeText" Name = "RepairOrMaintenancePlane"/>
-                <TextBox Grid.Row="16" Grid.Column="4"  Background="Gray" TextChanged="RepairOrMaintenanceChangeText" Name = "RepairOrMaintenanceFact"/>
-                <TextBox Grid.Row="16" Grid.Column="6"  Background="Gray" IsReadOnly="True" Name = "RepairOrMaintenanceDifference"/>
-                <TextBox Grid.Row="18" Grid.Column="2"  Background="Gray" TextChanged="MaterialsChangeText" Name = "MaterialsPlane"/>
-                <TextBox Grid.Row="18" Grid.Column="4"  Background="Gray" TextChanged="MaterialsChangeText" Name = "MaterialsFact"/>
-                <TextBox Grid.Row="18" Grid.Column="6"  Background="Gray" IsReadOnly="True" Name = "MaterialsDifference"/>
-                <TextBox Grid.Row="20" Grid.Column="2"  Background="Gray" TextChanged="OtherInHousingChangeText" Name="OtherInHousingPlane"/>
-                <TextBox Grid.Row="20" Grid.Column="4"  Background="Gray" TextChanged="OtherInHousingChangeText" Name = "OtherInHousingFact"/>
-                <TextBox Grid.Row="20" Grid.Column="6"  Background="Gray" IsReadOnly="True" Name = "OtherInHousingDifference"/>
-                <TextBox Grid.Row="22" Grid.Column="2"  Background="Gray" IsReadOnly="True" Name="TextBoxSubTotalPlane"/>
-                <TextBox Grid.Row="22" Grid.Column="4"  Background="Gray" IsReadOnly="True" Name="TextBoxSubTotalFact"/>
-                <TextBox Grid.Row="22" Grid.Column="6"  Background="Gray" IsReadOnly="True" Name = "TextBoxSubTotalDifference"/>
+                <TextBox Grid.Row="2" Grid.Column="2"   TextChanged="MortgageOrRentChangeText" Name = "MortgageOrRentPlane"/>
+                <TextBox Grid.Row="2" Grid.Column="4"   TextChanged="MortgageOrRentChangeText" Name = "MortgageOrRentFact"/>
+                <TextBox Grid.Row="2" Grid.Column="6"   IsReadOnly="True" x:Name = "MortgageOrRentDifference"/>
+                <TextBox Grid.Row="4" Grid.Column="2"   TextChanged="TelephoneChangeText" Name = "TelephonePlane"/>
+                <TextBox Grid.Row="4" Grid.Column="4"  TextChanged="TelephoneChangeText" Name = "TelephoneFact"/>
+                <TextBox Grid.Row="4" Grid.Column="6"   IsReadOnly="True" Name = "TelephoneDifference"/>
+                <TextBox Grid.Row="6" Grid.Column="2"  TextChanged="ElectricityChangeText" Name = "ElectricityPlane"/>
+                <TextBox Grid.Row="6" Grid.Column="4"   TextChanged="ElectricityChangeText" Name = "ElectricityFact"/>
+                <TextBox Grid.Row="6" Grid.Column="6"   IsReadOnly="True" Name = "ElectricityDifference"/>
+                <TextBox Grid.Row="8" Grid.Column="2"   TextChanged="GasChangeText" Name="GasPlane"/>
+                <TextBox Grid.Row="8" Grid.Column="4"   TextChanged="GasChangeText" Name="GasFact" />
+                <TextBox Grid.Row="8" Grid.Column="6"   IsReadOnly="True" Name="GasDifferent"/>
+                <TextBox Grid.Row="10" Grid.Column="2"   TextChanged="WaterSupplyAndSewerageChangeText" Name="WaterSupplyAndSeweragePlane"/>
+                <TextBox Grid.Row="10" Grid.Column="4"   TextChanged="WaterSupplyAndSewerageChangeText" Name="WaterSupplyAndSewerageFact"/>
+                <TextBox Grid.Row="10" Grid.Column="6"   IsReadOnly="True" Name = "WaterSupplyAndSewerageDifference"/>
+                <TextBox Grid.Row="12" Grid.Column="2"   TextChanged="TvChangeText" Name = "TvPlane"/>
+                <TextBox Grid.Row="12" Grid.Column="4"   TextChanged="TvChangeText" Name = "TvFact"/>
+                <TextBox Grid.Row="12" Grid.Column="6"   IsReadOnly="True" Name = "TvDifference"/>
+                <TextBox Grid.Row="14" Grid.Column="2"   TextChanged="GarbageRemovalChangeText" Name = "GarbagePlane"/>
+                <TextBox Grid.Row="14" Grid.Column="4"   TextChanged="GarbageRemovalChangeText" Name = "GarbageFact"/>
+                <TextBox Grid.Row="14" Grid.Column="6"   IsReadOnly="True" Name="GarbageDifference"/>
+                <TextBox Grid.Row="16" Grid.Column="2"   TextChanged="RepairOrMaintenanceChangeText" Name = "RepairOrMaintenancePlane"/>
+                <TextBox Grid.Row="16" Grid.Column="4"   TextChanged="RepairOrMaintenanceChangeText" Name = "RepairOrMaintenanceFact"/>
+                <TextBox Grid.Row="16" Grid.Column="6"   IsReadOnly="True" Name = "RepairOrMaintenanceDifference"/>
+                <TextBox Grid.Row="18" Grid.Column="2"   TextChanged="MaterialsChangeText" Name = "MaterialsPlane"/>
+                <TextBox Grid.Row="18" Grid.Column="4"   TextChanged="MaterialsChangeText" Name = "MaterialsFact"/>
+                <TextBox Grid.Row="18" Grid.Column="6"   IsReadOnly="True" Name = "MaterialsDifference"/>
+                <TextBox Grid.Row="20" Grid.Column="2"   TextChanged="OtherInHousingChangeText" Name="OtherInHousingPlane"/>
+                <TextBox Grid.Row="20" Grid.Column="4"   TextChanged="OtherInHousingChangeText" Name = "OtherInHousingFact"/>
+                <TextBox Grid.Row="20" Grid.Column="6"   IsReadOnly="True" Name = "OtherInHousingDifference"/>
+                <TextBox Grid.Row="22" Grid.Column="2"   IsReadOnly="True" Name="TextBoxSubTotalPlane"/>
+                <TextBox Grid.Row="22" Grid.Column="4"   IsReadOnly="True" Name="TextBoxSubTotalFact"/>
+                <TextBox Grid.Row="22" Grid.Column="6"   IsReadOnly="True" Name = "TextBoxSubTotalDifference"/>
          </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                
+                <lvc:CartesianChart
+                    Grid.Row="0"
+                    Series="{Binding Series}"
+                    XAxes="{Binding ScrollableAxes}"
+                    ZoomMode="X"
+                    DrawMargin="{Binding Margin}">
+                </lvc:CartesianChart>
+                
+            </Grid>
         </StackPanel>
     </Grid>
 </Page>
