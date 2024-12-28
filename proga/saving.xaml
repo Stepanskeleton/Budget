@@ -5,8 +5,22 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:proga"
       mc:Ignorable="d"
+      xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
       Loaded="Saving_OnLoaded"
-      Title="saving" Height="450" Width="800" Background="Gray">
+      Title="saving" Height="450" Width="800" Background="#403e3e">
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Page.Resources>
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
     <Grid>
         <Grid>
         <Grid.ColumnDefinitions>
@@ -58,20 +72,33 @@
              <TextBlock Grid.Row="6" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="8" Grid.Column="0">Промежуточный итог</TextBlock>
             
-                <TextBox Grid.Row="2" Grid.Column="2"  Background="Gray" Name="RetirementAccountPlane" TextChanged="RetirementAccountChangeText"/>
-                <TextBox Grid.Row="2" Grid.Column="4"  Background="Gray" Name="RetirementAccountFact" TextChanged="RetirementAccountChangeText"/>
-                <TextBox Grid.Row="2" Grid.Column="6"  Background="Gray" Name="RetirementAccountDifference"/>
-                <TextBox Grid.Row="4" Grid.Column="2"  Background="Gray" Name="InvestmentAccountPlane" TextChanged="InvestmentAccountChangeText"/>
-                <TextBox Grid.Row="4" Grid.Column="4"  Background="Gray" Name="InvestmentAccountFact" TextChanged="InvestmentAccountChangeText"/>
-                <TextBox Grid.Row="4" Grid.Column="6"  Background="Gray" Name="InvestmentAccountDifference"/>
-                <TextBox Grid.Row="6" Grid.Column="2"  Background="Gray" Name="OtherPlane" TextChanged="OtherChangeText"/>
-                <TextBox Grid.Row="6" Grid.Column="4"  Background="Gray" Name="OtherFact" TextChanged="OtherChangeText"/>
-                <TextBox Grid.Row="6" Grid.Column="6"  Background="Gray" Name="OtherDifference"/>
-                <TextBox Grid.Row="8" Grid.Column="2"  Background="Gray" Name="TextBoxSubTotalPlane"/>
-                <TextBox Grid.Row="8" Grid.Column="4"  Background="Gray" Name="TextBoxSubTotalFact"/>
-                <TextBox Grid.Row="8" Grid.Column="6"  Background="Gray" Name="TextBoxSubTotalDifference"/>
+                <TextBox Grid.Row="2" Grid.Column="2"   Name="RetirementAccountPlane" TextChanged="RetirementAccountChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="4"   Name="RetirementAccountFact" TextChanged="RetirementAccountChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="6"   Name="RetirementAccountDifference" IsReadOnly="True"/>
+                <TextBox Grid.Row="4" Grid.Column="2"   Name="InvestmentAccountPlane" TextChanged="InvestmentAccountChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="4"   Name="InvestmentAccountFact" TextChanged="InvestmentAccountChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="6"   Name="InvestmentAccountDifference" IsReadOnly="True"/>
+                <TextBox Grid.Row="6" Grid.Column="2"   Name="OtherPlane" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="4"   Name="OtherFact" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="6"   Name="OtherDifference" IsReadOnly="True"/>
+                <TextBox Grid.Row="8" Grid.Column="2"   Name="TextBoxSubTotalPlane" IsReadOnly="True"/>
+                <TextBox Grid.Row="8" Grid.Column="4"   Name="TextBoxSubTotalFact" IsReadOnly="True"/>
+                <TextBox Grid.Row="8" Grid.Column="6"   Name="TextBoxSubTotalDifference" IsReadOnly="True"/>
                
          </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                </Grid.RowDefinitions>
+                <lvc:CartesianChart
+                    Grid.Row="0"
+                    Series="{Binding Series}"
+                    XAxes="{Binding ScrollableAxes}"
+                    ZoomMode="X"
+                    DrawMargin="{Binding Margin}">
+                </lvc:CartesianChart>
+                
+            </Grid>
         </StackPanel>
     </Grid>
     </Grid>

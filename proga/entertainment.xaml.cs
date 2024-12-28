@@ -91,8 +91,7 @@ public partial class entertainment : Page
     }
     private void GraphicsUpdate()
     {
-        ViewModelPage2 = new ViewModel(methods.Planevalues, methods.Factvalues);
-        this.DataContext = ViewModelPage2;
+        this.DataContext = methods.GraphicUpdate();
     }
     private void Entertainment_OnLoaded(object sender, RoutedEventArgs e)
     {
@@ -114,6 +113,7 @@ public partial class entertainment : Page
             methods.TextBoxAnd_OldValuesUpdate(ref Other1Plane, ref Other1Fact, ref Other1Difference, ref  methods.data[6][1], ref  methods.data[6][2], ref  methods.data[6][3], ref Other1PlaneOld, ref Other1FactOld, ref Other1DifferenceOld);
             methods.TextBoxAnd_OldValuesUpdate(ref Other2Plane, ref Other2Fact, ref Other2Difference, ref  methods.data[7][1], ref  methods.data[7][2], ref  methods.data[7][3], ref Other2PlaneOld, ref Other2FactOld, ref Other2DifferenceOld);
             methods.TextBoxAnd_OldValuesUpdate(ref Other3Plane, ref Other3Fact, ref Other3Difference, ref  methods.data[8][1], ref  methods.data[8][2], ref  methods.data[8][3], ref Other3PlaneOld, ref Other3FactOld, ref Other3DifferenceOld);
+            GraphicsUpdate();
         }
     }
 }

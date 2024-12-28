@@ -3,10 +3,24 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
       xmlns:local="clr-namespace:proga"
       mc:Ignorable="d"
       Loaded="Pets_OnLoaded"
-      Title="Pets" Height="450" Width="800" Background="Gray">
+      Title="Pets" Height="450" Width="800" Background="#403e3e">
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Page.Resources>
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
     <Grid>
         <Grid>
         <Grid.ColumnDefinitions>
@@ -65,25 +79,38 @@
              <TextBlock Grid.Row="8" Grid.Column="0">Игрушки</TextBlock>
              <TextBlock Grid.Row="10" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="12" Grid.Column="0">Промежуточный итог</TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="2"  Background="Gray" Name="FoodPlane" TextChanged="FoodChangeText"/>
-                <TextBox Grid.Row="2" Grid.Column="4"  Background="Gray" Name="FoodFact" TextChanged="FoodChangeText"/>
-                <TextBox Grid.Row="2" Grid.Column="6"  Background="Gray" Name="FoodDifference"/>
-                <TextBox Grid.Row="4" Grid.Column="2"  Background="Gray" Name="MedicinePlane" TextChanged="MedicineChangeText"/>
-                <TextBox Grid.Row="4" Grid.Column="4"  Background="Gray" Name="MedicineFact" TextChanged="MedicineChangeText"/>
-                <TextBox Grid.Row="4" Grid.Column="6"  Background="Gray" Name="MedicineDifference"/>
-                <TextBox Grid.Row="6" Grid.Column="2"  Background="Gray" Name = "CarePlane" TextChanged="CareChangeText"/>
-                <TextBox Grid.Row="6" Grid.Column="4"  Background="Gray" Name="CareFact" TextChanged="CareChangeText"/>
-                <TextBox Grid.Row="6" Grid.Column="6"  Background="Gray" Name="CareDifference"/>
-                <TextBox Grid.Row="8" Grid.Column="2"  Background="Gray" Name="ToysPlane" TextChanged="ToysChangeText"/>
-                <TextBox Grid.Row="8" Grid.Column="4"  Background="Gray" Name="ToysFact" TextChanged="ToysChangeText"/>
-                <TextBox Grid.Row="8" Grid.Column="6"  Background="Gray" Name="ToysDifference"/>
-                <TextBox Grid.Row="10" Grid.Column="2"  Background="Gray" Name="OtherPlane" TextChanged="OtherChangeText"/>
-                <TextBox Grid.Row="10" Grid.Column="4"  Background="Gray" Name="OtherFact" TextChanged="OtherChangeText"/>
-                <TextBox Grid.Row="10" Grid.Column="6"  Background="Gray" Name="OtherDifference"/>
-                <TextBox Grid.Row="12" Grid.Column="2"  Background="Gray" Name = "TextBoxSubTotalPlane"/>
-                <TextBox Grid.Row="12" Grid.Column="4"  Background="Gray" Name="TextBoxSubTotalFact"/>
-                <TextBox Grid.Row="12" Grid.Column="6"  Background="Gray" Name="TextBoxSubTotalDifference"/>
+                <TextBox Grid.Row="2" Grid.Column="2"   Name="FoodPlane" TextChanged="FoodChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="4"   Name="FoodFact" TextChanged="FoodChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="6"   Name="FoodDifference"/>
+                <TextBox Grid.Row="4" Grid.Column="2"   Name="MedicinePlane" TextChanged="MedicineChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="4"   Name="MedicineFact" TextChanged="MedicineChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="6"   Name="MedicineDifference"/>
+                <TextBox Grid.Row="6" Grid.Column="2"  Name = "CarePlane" TextChanged="CareChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="4"   Name="CareFact" TextChanged="CareChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="6"   Name="CareDifference"/>
+                <TextBox Grid.Row="8" Grid.Column="2"   Name="ToysPlane" TextChanged="ToysChangeText"/>
+                <TextBox Grid.Row="8" Grid.Column="4"   Name="ToysFact" TextChanged="ToysChangeText"/>
+                <TextBox Grid.Row="8" Grid.Column="6"   Name="ToysDifference"/>
+                <TextBox Grid.Row="10" Grid.Column="2"   Name="OtherPlane" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="10" Grid.Column="4"   Name="OtherFact" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="10" Grid.Column="6"   Name="OtherDifference"/>
+                <TextBox Grid.Row="12" Grid.Column="2"  Name = "TextBoxSubTotalPlane" IsReadOnly="True"/>
+                <TextBox Grid.Row="12" Grid.Column="4"   Name="TextBoxSubTotalFact" IsReadOnly="True"/>
+                <TextBox Grid.Row="12" Grid.Column="6"   Name="TextBoxSubTotalDifference" IsReadOnly="True"/>
          </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                </Grid.RowDefinitions>
+                <lvc:CartesianChart
+                    Grid.Row="0"
+                    Series="{Binding Series}"
+                    XAxes="{Binding ScrollableAxes}"
+                    ZoomMode="X"
+                    DrawMargin="{Binding Margin}">
+                </lvc:CartesianChart>
+                
+            </Grid>
         </StackPanel>
     </Grid>
     </Grid>

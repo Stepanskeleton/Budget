@@ -4,9 +4,23 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:proga"
+      xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
       mc:Ignorable="d"
       Loaded="Food_OnLoaded"
-      Title="food" Height="450" Width="800" Background="Gray">
+      Title="food" Height="450" Width="800" Background="#403e3e">
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Page.Resources>
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
     <Grid>
          <Grid>
         <Grid.ColumnDefinitions>
@@ -55,20 +69,33 @@
              <TextBlock Grid.Row="4" Grid.Column="0">Рестораны</TextBlock>
              <TextBlock Grid.Row="6" Grid.Column="0">Другое</TextBlock>
              <TextBlock Grid.Row="8" Grid.Column="0">Промежуточный итог</TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="2"  Background="Gray" Name="FoodsPlane" TextChanged="FoodsChangeText"/>
-                <TextBox Grid.Row="2" Grid.Column="4"  Background="Gray" Name="FoodsFact" TextChanged="FoodsChangeText"/>
-                <TextBox Grid.Row="2" Grid.Column="6"  Background="Gray" Name="FoodsDifference"/>
-                <TextBox Grid.Row="4" Grid.Column="2"  Background="Gray" Name="RestaurantPlane" TextChanged="RestaurantChangeText"/>
-                <TextBox Grid.Row="4" Grid.Column="4"  Background="Gray" Name="RestaurantFact" TextChanged="RestaurantChangeText"/>
-                <TextBox Grid.Row="4" Grid.Column="6"  Background="Gray" Name="RestaurantDifference"/>
-                <TextBox Grid.Row="6" Grid.Column="2"  Background="Gray" Name="OtherPlane" TextChanged="OtherChangeText"/>
-                <TextBox Grid.Row="6" Grid.Column="4"  Background="Gray" Name="OtherFact" TextChanged="OtherChangeText"/>
-                <TextBox Grid.Row="6" Grid.Column="6"  Background="Gray" Name="OtherDifference"/>
-                <TextBox Grid.Row="8" Grid.Column="2"  Background="Gray" Name="TextBoxSubTotalPlane"/>
-                <TextBox Grid.Row="8" Grid.Column="4"  Background="Gray" Name="TextBoxSubTotalFact"/>
-                <TextBox Grid.Row="8" Grid.Column="6"  Background="Gray" Name="TextBoxSubTotalDifference"/>
+                <TextBox Grid.Row="2" Grid.Column="2"   Name="FoodsPlane" TextChanged="FoodsChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="4"   Name="FoodsFact" TextChanged="FoodsChangeText"/>
+                <TextBox Grid.Row="2" Grid.Column="6"   Name="FoodsDifference"/>
+                <TextBox Grid.Row="4" Grid.Column="2"   Name="RestaurantPlane" TextChanged="RestaurantChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="4"   Name="RestaurantFact" TextChanged="RestaurantChangeText"/>
+                <TextBox Grid.Row="4" Grid.Column="6"  Name="RestaurantDifference"/>
+                <TextBox Grid.Row="6" Grid.Column="2"   Name="OtherPlane" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="4"   Name="OtherFact" TextChanged="OtherChangeText"/>
+                <TextBox Grid.Row="6" Grid.Column="6"   Name="OtherDifference"/>
+                <TextBox Grid.Row="8" Grid.Column="2"   Name="TextBoxSubTotalPlane" IsReadOnly="True"/>
+                <TextBox Grid.Row="8" Grid.Column="4"   Name="TextBoxSubTotalFact" IsReadOnly="True"/>
+                <TextBox Grid.Row="8" Grid.Column="6"  Name="TextBoxSubTotalDifference" IsReadOnly="True"/>
                 
          </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                </Grid.RowDefinitions>
+                <lvc:CartesianChart
+                    Grid.Row="0"
+                    Series="{Binding Series}"
+                    XAxes="{Binding ScrollableAxes}"
+                    ZoomMode="X"
+                    DrawMargin="{Binding Margin}">
+                </lvc:CartesianChart>
+                
+            </Grid>
         </StackPanel>
     </Grid>
     </Grid>
