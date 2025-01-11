@@ -8,6 +8,9 @@
       Loaded="MainPage_OnLoaded"
       mc:Ignorable="d"
       Title="mainPage" Height="450" Width="800" Background="#403e3e">
+   <Page.DataContext>
+       <local:ViewModelMainPage/>
+   </Page.DataContext>
     <Page.Resources>
         <Style TargetType="TextBox">
             <Setter Property="Background" Value="#403e3e"/>
@@ -71,19 +74,6 @@
             <Setter Property="Margin" Value="2"/>
             <Setter Property="Padding" Value="5"/>
             <Setter Property="FontFamily" Value="pack://application:,,,/Fonts/#Nunito"/>
-            <!-- <Setter Property="Template"> -->
-                <!-- <Setter.Value> -->
-                    <!-- <ControlTemplate TargetType="ListBoxItem"> -->
-                        <!-- <Border Background="{TemplateBinding Background}" -->
-                                <!-- BorderBrush="#5A5A5A" -->
-                                <!-- BorderThickness="1" -->
-                                
-                                <!-- CornerRadius="5"> -->
-                            <!-- <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/> -->
-                        <!-- </Border> -->
-                    <!-- </ControlTemplate> -->
-                <!-- </Setter.Value> -->
-            <!-- </Setter> -->
             <Style.Triggers>
                 <Trigger Property="IsSelected" Value="True">
                     <Setter Property="Background" Value="#5A5A5A"/>
@@ -262,6 +252,22 @@
                     <TextBlock Grid.Column="2" Grid.Row="5"  Name="Difference" ></TextBlock>
                 </Grid>
             </StackPanel>
+            <Grid Grid.Column="1" Grid.Row="1" Height="250" Width="350">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                </Grid.RowDefinitions>
+                <lvc:CartesianChart
+                    Grid.Row="0"
+                    Series="{Binding Series}"
+                    XAxes="{Binding ScrollableAxes}"
+                    ZoomMode="X"
+                    DrawMargin="{Binding Margin}">
+                </lvc:CartesianChart>
+                <lvc:PieChart Series="{Binding Series}"
+                              LegendPosition="Hidden"
+                              Margin="10">
+                </lvc:PieChart>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

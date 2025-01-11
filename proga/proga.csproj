@@ -23,6 +23,10 @@
         <Generator>MSBuild:Compile</Generator>
         <DependentUpon>Methods.cs</DependentUpon>
       </Page>
+      <Page Update="mainPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <DependentUpon>LegalExpenses.xaml</DependentUpon>
+      </Page>
     </ItemGroup>
 
 </Project>

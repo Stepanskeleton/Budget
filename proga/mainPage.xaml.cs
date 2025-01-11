@@ -11,6 +11,7 @@ public partial class mainPage : Page
     }
     public string way = "C:\\projects C#\\proga\\BdOne.db";
     Methods methods = new Methods();
+    bool startflag = false;
     private void PlaneIncomeUpdate(object sender, TextChangedEventArgs e)
     {
         bool flag = false;
@@ -32,7 +33,7 @@ public partial class mainPage : Page
             TotalIncome_tb.Text = (text1 + text2).ToString();
             methods.UpdateDB("Name", "Income1","Sum",(text1 + text2));
             methods.UpdateDB("Name", "Income1","Plane",text1);
-            methods.UpdateDB("Name", "Income1","Fact",text2);
+            methods.UpdateDB("Name", "additionalIncome","Plane",text2);
             Text_box_Update();
         }
     }
@@ -57,7 +58,7 @@ public partial class mainPage : Page
         {
             FactTotalIncome_tb.Text = (text1 + text2).ToString();
             methods.UpdateDB("Name", "additionalIncome","Sum",(text1 + text2));
-            methods.UpdateDB("Name", "additionalIncome","Plane",text1);
+            methods.UpdateDB("Name", "Income1","Fact",text1);
             methods.UpdateDB("Name", "additionalIncome","Fact",text2);
             Text_box_Update();
         }
@@ -118,8 +119,22 @@ public partial class mainPage : Page
              PlannedBalance.Text = (-PlaneBalanceFromDB + Convert.ToDouble(TotalIncome_tb.Text)).ToString();
             FactBalance.Text = (-FactBalanceFromDB + Convert.ToDouble(FactTotalIncome_tb.Text)).ToString();
             Difference.Text = (Convert.ToDouble(PlannedBalance.Text) - Convert.ToDouble(FactBalance.Text)).ToString();
+            GraphicUpdate();
         }
        
+    }
+
+    private void GraphicUpdate()
+    {
+        if (startflag == true)
+        {
+            List<double> values = new List<double>();
+            values.Add(Convert.ToDouble( PlannedBalance.Text));
+            values.Add(Convert.ToDouble(FactBalance.Text));
+            values.Add(Convert.ToDouble( Difference.Text));
+            this.DataContext = new ViewModelMainPage(values);
+        }
+        
     }
     private void MainPage_OnLoaded(object sender, RoutedEventArgs e)
     {
@@ -135,7 +150,9 @@ public partial class mainPage : Page
             PlannedBalance.Text = methods.data[2][1];
             FactBalance.Text = methods.data[2][2];
             Difference.Text = methods.data[2][3];
+            startflag = true;
             Text_box_Update();
+            GraphicUpdate();
         }
     }
 }

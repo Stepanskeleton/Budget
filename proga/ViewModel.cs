@@ -32,15 +32,19 @@ public partial class ViewModel
         {
             new ColumnSeries<ObservablePoint>
             {
+                Name = "Плановый расход",
                 Values = _values,
                 //GeometryStroke = null,
                 //GeometryFill = null,
-                DataPadding = new(0, 1)
+                DataPadding = new(0, 1),
+                Fill = new SolidColorPaint(new SKColor(237, 61, 21))
             },
             new ColumnSeries<ObservablePoint>
             {
-            Values = _values2,
-            DataPadding = new(0, 1)
+                Name = "Фактический расход",
+                Values = _values2,
+                DataPadding = new(0, 1),
+                Fill = new SolidColorPaint(new SKColor(17, 39, 209))
             }
         };
         // Инициализация серии для полосы прокрутки
