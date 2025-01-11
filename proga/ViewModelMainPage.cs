@@ -28,53 +28,48 @@ public partial class ViewModelMainPage : ObservableObject
 {
     private bool _isDown = false;
     private readonly ObservableCollection<ObservablePoint> _values = new();
-    private readonly List<double> values1 = new();
-    private readonly List<double> values2 = new();
-    private readonly List<double> values3 = new();
-    public ViewModelMainPage(List<double> values)
+    private readonly List<List<double>> ValuesLists = new();
+    private readonly List<string> LegendsNames = new();
+    private readonly List<SKColor> Colors = new List<SKColor>
     {
+         (new SKColor(237, 61, 21)),
+         (new SKColor(17, 39, 209)),
+         (new SKColor(252, 186, 3)),
+    };
+    public ViewModelMainPage(List<double> values, List<string > legendsNames = null)
+    {
+        // Создание коллекций со значениями
         for (int i = 0; i < values.Count; i++)
         {
-            _values.Add(new ObservablePoint(i, values[i]));
+            ValuesLists.Add(new List<double> { Math.Abs(values[i]) });
         }
-       values1.Add(Math.Abs(values[0]));
-       values2.Add(Math.Abs(values[1]));
-       values3.Add(Math.Abs(values[2]));
-        /*Series = new ISeries[]
+        // Создание коллекции с именами для легенды
+        if (legendsNames == null)
         {
-            new PieSeries<ObservablePoint>
+            LegendsNames = new List<string>
             {
-                Values = _values,
-                
-                  //Fill  = new SolidColorPaint(new SKColor(237, 61, 21))
-            }
-        };*/
-        Random r = new Random();
-        Series = new ISeries[]
+                "Плановый остаток",  "Фактический остаток", "Разница"
+            };
+        }
+        else
         {
-            new PieSeries<double>
+            LegendsNames = new List<string>();
+            for (int i = 0; i < legendsNames.Count; i++)
             {
-                Name = "Плановый остаток",
-                Values = values1,
-                // Используем функцию для генерации уникальных цветов
-                Fill = new SolidColorPaint(new SKColor(237, 61, 21))
-            },
-            new PieSeries<double>
-            {
-                Name = "Фактический остаток",
-                Values = values2,
-            // Используем функцию для генерации уникальных цветов
-            Fill = new SolidColorPaint(new SKColor(17, 39, 209))
-            },
-            new PieSeries<double>
-            {
-                Name = "Разница",
-                Values = values3,
-                // Используем функцию для генерации уникальных цветов
-               
+                LegendsNames.Add(legendsNames[i]);
             }
-        };
-        
+        }
+        Series = new ISeries[values.Count];
+        for (int i = 0; i < values.Count; i++)
+        {
+            Series[i] = new PieSeries<double>
+            {
+                Name = LegendsNames[i],
+                Values = ValuesLists[i],
+                // Используем функцию для генерации уникальных цветов
+                Fill = new SolidColorPaint(Colors[i])
+            };
+        }
     }
     public ViewModelMainPage()
     {

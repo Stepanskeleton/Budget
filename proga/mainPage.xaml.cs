@@ -27,7 +27,6 @@ public partial class mainPage : Page
         {
            ex = exception;
         }
-
         if (flag)
         {
             TotalIncome_tb.Text = (text1 + text2).ToString();
@@ -47,13 +46,11 @@ public partial class mainPage : Page
             text1 = Convert.ToDouble(FactIncome1_tb.Text.ToString());
             text2 = Convert.ToDouble(FactAdditionalIncome_tb.Text.ToString());
             flag = true;
-            
         }
         catch (Exception exception)
         {
             ex = exception;
         }
-
         if (flag)
         {
             FactTotalIncome_tb.Text = (text1 + text2).ToString();
@@ -63,7 +60,6 @@ public partial class mainPage : Page
             Text_box_Update();
         }
     }
-    
     private void Text_box_Update()
     {
         if (TotalIncome_tb.Text != null && TotalIncome_tb.Text !="" && FactTotalIncome_tb.Text != null && FactTotalIncome_tb.Text != "" && Difference.Text != null &&  Difference.Text != "" && PlaneIncome1_tb.Text != null && PlaneIncome1_tb.Text != "" && PlaneadditionalIncome_tb.Text != null && PlaneadditionalIncome_tb.Text != "" && FactIncome1_tb.Text != null && FactIncome1_tb.Text != "" && FactAdditionalIncome_tb != null && FactAdditionalIncome_tb.Text != "")
@@ -101,7 +97,6 @@ public partial class mainPage : Page
                                     a.Add(value3);
                                     // Process the value as needed
                                 }
-
                                 PlaneBalanceFromDB += a[0];
                                 FactBalanceFromDB += a[1];
                                 DifferenceFromDB += a[2];
@@ -121,9 +116,7 @@ public partial class mainPage : Page
             Difference.Text = (Convert.ToDouble(PlannedBalance.Text) - Convert.ToDouble(FactBalance.Text)).ToString();
             GraphicUpdate();
         }
-       
     }
-
     private void GraphicUpdate()
     {
         if (startflag == true)
@@ -134,7 +127,6 @@ public partial class mainPage : Page
             values.Add(Convert.ToDouble( Difference.Text));
             this.DataContext = new ViewModelMainPage(values);
         }
-        
     }
     private void MainPage_OnLoaded(object sender, RoutedEventArgs e)
     {

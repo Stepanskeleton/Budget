@@ -23,7 +23,7 @@ public partial class ViewModel
         {
             _values.Add(new ObservablePoint(i,values[i]));
         }
-
+        
         for (int i = 0; i < values2.Count; i++)
         {
             _values2.Add(new ObservablePoint(i,values2[i]));
