@@ -35,6 +35,15 @@ public partial class ViewModelMainPage : ObservableObject
          (new SKColor(237, 61, 21)),
          (new SKColor(17, 39, 209)),
          (new SKColor(252, 186, 3)),
+         (new SKColor(199, 42, 167)),
+         (new SKColor(102, 68, 95)),
+         (new SKColor(169, 197, 209)),
+         (new SKColor(44, 148, 65)),
+         (new SKColor(70, 120, 219)),
+         (new SKColor(224, 117, 117)),
+         (new SKColor(89, 212, 165)),
+         (new SKColor(1, 8, 5)),
+         (new SKColor(0,0,0)),
     };
     public ViewModelMainPage(List<double> values, List<string > legendsNames = null)
     {
@@ -55,6 +64,41 @@ public partial class ViewModelMainPage : ObservableObject
         {
             LegendsNames = new List<string>();
             for (int i = 0; i < legendsNames.Count; i++)
+            {
+                LegendsNames.Add(legendsNames[i]);
+            }
+        }
+        Series = new ISeries[values.Count];
+        for (int i = 0; i < values.Count; i++)
+        {
+            Series[i] = new PieSeries<double>
+            {
+                Name = LegendsNames[i],
+                Values = ValuesLists[i],
+                // Используем функцию для генерации уникальных цветов
+                Fill = new SolidColorPaint(Colors[i])
+            };
+        }
+    }
+    public ViewModelMainPage(List<double> values,string[] legendsNames)
+    {
+        // Создание коллекций со значениями
+        for (int i = 0; i < values.Count; i++)
+        {
+            ValuesLists.Add(new List<double> { Math.Abs(values[i]) });
+        }
+        // Создание коллекции с именами для легенды
+        if (legendsNames == null)
+        {
+            LegendsNames = new List<string>
+            {
+                "Плановый остаток",  "Фактический остаток", "Разница"
+            };
+        }
+        else
+        {
+            LegendsNames = new List<string>();
+            for (int i = 0; i < legendsNames.Length; i++)
             {
                 LegendsNames.Add(legendsNames[i]);
             }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("proga")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67da41651a5de828c4ef090cba6cfbf53a5805cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2689532b57a16ade6e792c17b6db982fa645d6fc")]
 [assembly: System.Reflection.AssemblyProductAttribute("proga")]
 [assembly: System.Reflection.AssemblyTitleAttribute("proga")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

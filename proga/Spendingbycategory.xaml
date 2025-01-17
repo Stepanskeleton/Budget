@@ -1,0 +1,171 @@
+﻿<Page x:Class="proga.Spendingbycategory"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:proga"
+      xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+      mc:Ignorable="d"
+      Loaded="Spendingbycategory_OnLoaded"
+      Title="Spendingbycategory" Height="450" Width="800" Background="#403e3e">
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Background" Value="#403e3e"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Page.Resources>
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
+   
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Margin="5" Grid.Row="0">Траты по категориям</TextBlock>
+            <Grid Margin="10" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <GridSplitter Grid.RowSpan="26" Grid.Column="0"  VerticalAlignment="Stretch" Width="1" IsEnabled="False" ></GridSplitter>
+                <GridSplitter Grid.RowSpan="26" Grid.Column="2"  VerticalAlignment="Stretch" Width="1" IsEnabled="False" ></GridSplitter>
+                <GridSplitter Grid.RowSpan="26" Grid.Column="4"  VerticalAlignment="Stretch" Width="1" IsEnabled="False" ></GridSplitter>
+                <GridSplitter Grid.RowSpan="26" Grid.Column="6"  VerticalAlignment="Stretch" Width="1" IsEnabled="False" ></GridSplitter>
+                <GridSplitter Grid.RowSpan="26" Grid.Column="8"  VerticalAlignment="Stretch" Width="1" IsEnabled="False" ></GridSplitter>
+                <GridSplitter Grid.Row = "0" Grid.ColumnSpan="10" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "2" Grid.ColumnSpan="10" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "4" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "6" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "8" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "10" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "12" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "14" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "16" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "18" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "20" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "22" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "24" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <GridSplitter Grid.Row = "26" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+                <TextBlock Grid.Column="3" Grid.Row="1">Запланированные затраты</TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="1">Фактические затраты</TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="1">Разница</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="3">Жильё</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="5">Развлечения</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="7">Транспорт</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="9">Кредиты</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="11">Страхование</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="13">Еда</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="15">Питомцы</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="17">Налоги</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="19">Сбережения</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="21">Подарки</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="23">Гигиена</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="25">Юридические расходы</TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="3" Name = "HomePlane"></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="3" Name = "HomeFact"></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="3" Name = "HomeDifference"></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="5" Name = "EntertainmentPlane"></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="5"  Name = "EntertainmentFact"></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="5"  Name = "EntertainmentDifference" ></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="7"  Name = "TransportPlane" ></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="7"  Name = "TransportFact" ></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="7" Name = "TransportDifference" ></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="9" Name = "CreditsPlane"></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="9" Name = "CreditsFact"></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="9" Name = "CreditsDifference"></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="11" Name = "InsurancePlane"></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="11" Name = "InsuranceFact"></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="11" Name = "InsuranceDifference"></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="13" Name = "FoodPlane"></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="13" Name = "FoodFact"></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="13" Name = "FoodDifference"></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="15" Name = "PetsPlane"></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="15" Name = "PetsFact"></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="15" Name = "PetsDifference"></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="17" Name = "TaxesPlane"></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="17" Name = "TaxesFact"></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="17" Name = "TaxesDifference"></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="19" Name = "SavingPlane"></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="19" Name = "SavingFact"></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="19" Name = "SavingDifference"></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="21" Name = "GiftsPlane"></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="21" Name = "GiftsFact"></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="21" Name = "GiftsDifference"></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="23" Name = "PersonalHygienePlane"></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="23" Name = "PersonalHygieneFact"></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="23" Name = "PersonalHygieneDifference"></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="25" Name = "LegalExperensesPlane"></TextBlock>
+                <TextBlock Grid.Column="5" Grid.Row="25" Name = "LegalExperensesFact"></TextBlock>
+                <TextBlock Grid.Column="7" Grid.Row="25" Name = "LegalExperensesDifference"></TextBlock>
+            </Grid>
+            <Grid   Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <lvc:CartesianChart
+                    Grid.Row="0"
+                    Series="{Binding Series}"
+                    XAxes="{Binding ScrollableAxes}"
+                    ZoomMode="X"
+                    DrawMargin="{Binding Margin}">
+                </lvc:CartesianChart>
+                <lvc:PieChart Series="{Binding Series}"
+                              LegendPosition="Left"
+                              Margin="10">
+                </lvc:PieChart>
+            </Grid>
+        <Grid/>
+    </Grid>
+    </Grid>
+</Page>

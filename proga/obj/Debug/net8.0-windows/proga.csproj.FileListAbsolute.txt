@@ -92,3 +92,5 @@ C:\projects C#\proga\proga\bin\Debug\net8.0-windows\runtimes\win-arm64\native\li
 C:\projects C#\proga\proga\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
 C:\projects C#\proga\proga\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
 C:\projects C#\proga\proga\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\projects C#\proga\proga\obj\Debug\net8.0-windows\Spendingbycategory.g.cs
+C:\projects C#\proga\proga\obj\Debug\net8.0-windows\Spendingbycategory.baml

@@ -88,5 +88,9 @@ public partial class MainWindow : Window
         Frame1.Source = new Uri("LegalExpenses.xaml", UriKind.Relative);
         
     }
-    
+
+    private void Spendingbycategory_OnClick(object sender, RoutedEventArgs e)
+    {
+        Frame1.Source = new Uri("Spendingbycategory.xaml", UriKind.Relative);
+    }
 }

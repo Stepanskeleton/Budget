@@ -58,6 +58,7 @@
                  <RowDefinition Height="Auto"></RowDefinition>
              </Grid.RowDefinitions>
              <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="1"></ColumnDefinition>
                  <ColumnDefinition Width="1.13*"></ColumnDefinition>
                  <ColumnDefinition Width="Auto"></ColumnDefinition>
                  <ColumnDefinition Width="*"></ColumnDefinition>
@@ -67,69 +68,71 @@
                  <ColumnDefinition Width="*"></ColumnDefinition>
                  <!-- <ColumnDefinition Width="0.1*"></ColumnDefinition> -->
              </Grid.ColumnDefinitions>
+                <GridSplitter Grid.RowSpan="24" Grid.Column="0"  VerticalAlignment="Stretch" Width="1" IsEnabled="False" ></GridSplitter>
              <GridSplitter Grid.RowSpan="24" Grid.Column="1"  VerticalAlignment="Stretch" Width="1" IsEnabled="False" ></GridSplitter>
              <GridSplitter Grid.RowSpan="24" Grid.Column="3"  VerticalAlignment="Stretch" Width="1" IsEnabled="False" ></GridSplitter>
              <GridSplitter Grid.RowSpan="24" Grid.Column="5"  VerticalAlignment="Stretch" Width="1" IsEnabled="False" ></GridSplitter>
-             <GridSplitter Grid.Row = "1" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <GridSplitter Grid.Row = "3" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <GridSplitter Grid.Row = "5" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <GridSplitter Grid.Row = "7" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <GridSplitter Grid.Row = "9" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <GridSplitter Grid.Row = "11" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <GridSplitter Grid.Row = "13" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <GridSplitter Grid.Row = "15" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <GridSplitter Grid.Row = "17" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <GridSplitter Grid.Row = "19" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <GridSplitter Grid.Row = "21" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <GridSplitter Grid.Row = "23" Grid.ColumnSpan="7" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
-             <TextBlock Grid.Column="2" Grid.Row="0">Запланированные затраты</TextBlock>
-             <TextBlock Grid.Column="4" Grid.Row="0">Фактические затраты</TextBlock>
-             <TextBlock Grid.Column="6" Grid.Row="0">Разница</TextBlock>
-             <TextBlock Grid.Row="2" Grid.Column="0">Ипотека или аренда</TextBlock>
-             <TextBlock Grid.Row="4" Grid.Column="0">Телефон</TextBlock>
-             <TextBlock Grid.Row="6" Grid.Column="0">Электричество</TextBlock>
-             <TextBlock Grid.Row="8" Grid.Column="0">Газ</TextBlock>
-             <TextBlock Grid.Row="10" Grid.Column="0">Водоснабжение и канализация</TextBlock>
-             <TextBlock Grid.Row="12" Grid.Column="0">Кабельное тв</TextBlock>
-             <TextBlock Grid.Row="14" Grid.Column="0">Вывоз мусора</TextBlock>
-             <TextBlock Grid.Row="16" Grid.Column="0">Ремонт или тех обслуживание</TextBlock>
-             <TextBlock Grid.Row="18" Grid.Column="0">Материалы</TextBlock>
-             <TextBlock Grid.Row="20" Grid.Column="0">Другое</TextBlock>
-             <TextBlock Grid.Row="22" Grid.Column="0">Промежуточный итог</TextBlock>
+                <GridSplitter Grid.RowSpan="24" Grid.Column="7"  VerticalAlignment="Stretch" Width="1" IsEnabled="False" ></GridSplitter>
+             <GridSplitter Grid.Row = "1" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <GridSplitter Grid.Row = "3" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <GridSplitter Grid.Row = "5" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <GridSplitter Grid.Row = "7" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <GridSplitter Grid.Row = "9" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <GridSplitter Grid.Row = "11" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <GridSplitter Grid.Row = "13" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <GridSplitter Grid.Row = "15" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <GridSplitter Grid.Row = "17" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <GridSplitter Grid.Row = "19" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <GridSplitter Grid.Row = "21" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <GridSplitter Grid.Row = "23" Grid.ColumnSpan="8" Height="1" HorizontalAlignment="Stretch" IsEnabled="False"></GridSplitter>
+             <TextBlock Grid.Column="3" Grid.Row="0">Запланированные затраты</TextBlock>
+             <TextBlock Grid.Column="5" Grid.Row="0">Фактические затраты</TextBlock>
+             <TextBlock Grid.Column="7" Grid.Row="0">Разница</TextBlock>
+             <TextBlock Grid.Row="2" Grid.Column="1">Ипотека или аренда</TextBlock>
+             <TextBlock Grid.Row="4" Grid.Column="1">Телефон</TextBlock>
+             <TextBlock Grid.Row="6" Grid.Column="1">Электричество</TextBlock>
+             <TextBlock Grid.Row="8" Grid.Column="1">Газ</TextBlock>
+             <TextBlock Grid.Row="10" Grid.Column="1">Водоснабжение и канализация</TextBlock>
+             <TextBlock Grid.Row="12" Grid.Column="1">Кабельное тв</TextBlock>
+             <TextBlock Grid.Row="14" Grid.Column="1">Вывоз мусора</TextBlock>
+             <TextBlock Grid.Row="16" Grid.Column="1">Ремонт или тех обслуживание</TextBlock>
+             <TextBlock Grid.Row="18" Grid.Column="1">Материалы</TextBlock>
+             <TextBlock Grid.Row="20" Grid.Column="1">Другое</TextBlock>
+             <TextBlock Grid.Row="22" Grid.Column="1">Промежуточный итог</TextBlock>
 
-                <TextBox Grid.Row="2" Grid.Column="2"   TextChanged="MortgageOrRentChangeText" Name = "MortgageOrRentPlane"/>
-                <TextBox Grid.Row="2" Grid.Column="4"   TextChanged="MortgageOrRentChangeText" Name = "MortgageOrRentFact"/>
-                <TextBox Grid.Row="2" Grid.Column="6"   IsReadOnly="True" x:Name = "MortgageOrRentDifference"/>
-                <TextBox Grid.Row="4" Grid.Column="2"   TextChanged="TelephoneChangeText" Name = "TelephonePlane"/>
-                <TextBox Grid.Row="4" Grid.Column="4"  TextChanged="TelephoneChangeText" Name = "TelephoneFact"/>
-                <TextBox Grid.Row="4" Grid.Column="6"   IsReadOnly="True" Name = "TelephoneDifference"/>
-                <TextBox Grid.Row="6" Grid.Column="2"  TextChanged="ElectricityChangeText" Name = "ElectricityPlane"/>
-                <TextBox Grid.Row="6" Grid.Column="4"   TextChanged="ElectricityChangeText" Name = "ElectricityFact"/>
-                <TextBox Grid.Row="6" Grid.Column="6"   IsReadOnly="True" Name = "ElectricityDifference"/>
-                <TextBox Grid.Row="8" Grid.Column="2"   TextChanged="GasChangeText" Name="GasPlane"/>
-                <TextBox Grid.Row="8" Grid.Column="4"   TextChanged="GasChangeText" Name="GasFact" />
-                <TextBox Grid.Row="8" Grid.Column="6"   IsReadOnly="True" Name="GasDifferent"/>
-                <TextBox Grid.Row="10" Grid.Column="2"   TextChanged="WaterSupplyAndSewerageChangeText" Name="WaterSupplyAndSeweragePlane"/>
-                <TextBox Grid.Row="10" Grid.Column="4"   TextChanged="WaterSupplyAndSewerageChangeText" Name="WaterSupplyAndSewerageFact"/>
-                <TextBox Grid.Row="10" Grid.Column="6"   IsReadOnly="True" Name = "WaterSupplyAndSewerageDifference"/>
-                <TextBox Grid.Row="12" Grid.Column="2"   TextChanged="TvChangeText" Name = "TvPlane"/>
-                <TextBox Grid.Row="12" Grid.Column="4"   TextChanged="TvChangeText" Name = "TvFact"/>
-                <TextBox Grid.Row="12" Grid.Column="6"   IsReadOnly="True" Name = "TvDifference"/>
-                <TextBox Grid.Row="14" Grid.Column="2"   TextChanged="GarbageRemovalChangeText" Name = "GarbagePlane"/>
-                <TextBox Grid.Row="14" Grid.Column="4"   TextChanged="GarbageRemovalChangeText" Name = "GarbageFact"/>
-                <TextBox Grid.Row="14" Grid.Column="6"   IsReadOnly="True" Name="GarbageDifference"/>
-                <TextBox Grid.Row="16" Grid.Column="2"   TextChanged="RepairOrMaintenanceChangeText" Name = "RepairOrMaintenancePlane"/>
-                <TextBox Grid.Row="16" Grid.Column="4"   TextChanged="RepairOrMaintenanceChangeText" Name = "RepairOrMaintenanceFact"/>
-                <TextBox Grid.Row="16" Grid.Column="6"   IsReadOnly="True" Name = "RepairOrMaintenanceDifference"/>
-                <TextBox Grid.Row="18" Grid.Column="2"   TextChanged="MaterialsChangeText" Name = "MaterialsPlane"/>
-                <TextBox Grid.Row="18" Grid.Column="4"   TextChanged="MaterialsChangeText" Name = "MaterialsFact"/>
-                <TextBox Grid.Row="18" Grid.Column="6"   IsReadOnly="True" Name = "MaterialsDifference"/>
-                <TextBox Grid.Row="20" Grid.Column="2"   TextChanged="OtherInHousingChangeText" Name="OtherInHousingPlane"/>
-                <TextBox Grid.Row="20" Grid.Column="4"   TextChanged="OtherInHousingChangeText" Name = "OtherInHousingFact"/>
-                <TextBox Grid.Row="20" Grid.Column="6"   IsReadOnly="True" Name = "OtherInHousingDifference"/>
-                <TextBox Grid.Row="22" Grid.Column="2"   IsReadOnly="True" Name="TextBoxSubTotalPlane"/>
-                <TextBox Grid.Row="22" Grid.Column="4"   IsReadOnly="True" Name="TextBoxSubTotalFact"/>
-                <TextBox Grid.Row="22" Grid.Column="6"   IsReadOnly="True" Name = "TextBoxSubTotalDifference"/>
+                <TextBox Grid.Row="2" Grid.Column="3"   TextChanged="MortgageOrRentChangeText" Name = "MortgageOrRentPlane"/>
+                <TextBox Grid.Row="2" Grid.Column="5"   TextChanged="MortgageOrRentChangeText" Name = "MortgageOrRentFact"/>
+                <TextBox Grid.Row="2" Grid.Column="7"   IsReadOnly="True" x:Name = "MortgageOrRentDifference"/>
+                <TextBox Grid.Row="4" Grid.Column="3"   TextChanged="TelephoneChangeText" Name = "TelephonePlane"/>
+                <TextBox Grid.Row="4" Grid.Column="5"  TextChanged="TelephoneChangeText" Name = "TelephoneFact"/>
+                <TextBox Grid.Row="4" Grid.Column="7"   IsReadOnly="True" Name = "TelephoneDifference"/>
+                <TextBox Grid.Row="6" Grid.Column="3"  TextChanged="ElectricityChangeText" Name = "ElectricityPlane"/>
+                <TextBox Grid.Row="6" Grid.Column="5"   TextChanged="ElectricityChangeText" Name = "ElectricityFact"/>
+                <TextBox Grid.Row="6" Grid.Column="7"   IsReadOnly="True" Name = "ElectricityDifference"/>
+                <TextBox Grid.Row="8" Grid.Column="3"   TextChanged="GasChangeText" Name="GasPlane"/>
+                <TextBox Grid.Row="8" Grid.Column="5"   TextChanged="GasChangeText" Name="GasFact" />
+                <TextBox Grid.Row="8" Grid.Column="7"   IsReadOnly="True" Name="GasDifferent"/>
+                <TextBox Grid.Row="10" Grid.Column="3"   TextChanged="WaterSupplyAndSewerageChangeText" Name="WaterSupplyAndSeweragePlane"/>
+                <TextBox Grid.Row="10" Grid.Column="5"   TextChanged="WaterSupplyAndSewerageChangeText" Name="WaterSupplyAndSewerageFact"/>
+                <TextBox Grid.Row="10" Grid.Column="7"   IsReadOnly="True" Name = "WaterSupplyAndSewerageDifference"/>
+                <TextBox Grid.Row="12" Grid.Column="3"   TextChanged="TvChangeText" Name = "TvPlane"/>
+                <TextBox Grid.Row="12" Grid.Column="5"   TextChanged="TvChangeText" Name = "TvFact"/>
+                <TextBox Grid.Row="12" Grid.Column="7"   IsReadOnly="True" Name = "TvDifference"/>
+                <TextBox Grid.Row="14" Grid.Column="3"   TextChanged="GarbageRemovalChangeText" Name = "GarbagePlane"/>
+                <TextBox Grid.Row="14" Grid.Column="5"   TextChanged="GarbageRemovalChangeText" Name = "GarbageFact"/>
+                <TextBox Grid.Row="14" Grid.Column="7"   IsReadOnly="True" Name="GarbageDifference"/>
+                <TextBox Grid.Row="16" Grid.Column="3"   TextChanged="RepairOrMaintenanceChangeText" Name = "RepairOrMaintenancePlane"/>
+                <TextBox Grid.Row="16" Grid.Column="5"   TextChanged="RepairOrMaintenanceChangeText" Name = "RepairOrMaintenanceFact"/>
+                <TextBox Grid.Row="16" Grid.Column="7"   IsReadOnly="True" Name = "RepairOrMaintenanceDifference"/>
+                <TextBox Grid.Row="18" Grid.Column="3"   TextChanged="MaterialsChangeText" Name = "MaterialsPlane"/>
+                <TextBox Grid.Row="18" Grid.Column="5"   TextChanged="MaterialsChangeText" Name = "MaterialsFact"/>
+                <TextBox Grid.Row="18" Grid.Column="7"   IsReadOnly="True" Name = "MaterialsDifference"/>
+                <TextBox Grid.Row="20" Grid.Column="3"   TextChanged="OtherInHousingChangeText" Name="OtherInHousingPlane"/>
+                <TextBox Grid.Row="20" Grid.Column="5"   TextChanged="OtherInHousingChangeText" Name = "OtherInHousingFact"/>
+                <TextBox Grid.Row="20" Grid.Column="7"   IsReadOnly="True" Name = "OtherInHousingDifference"/>
+                <TextBox Grid.Row="22" Grid.Column="3"   IsReadOnly="True" Name="TextBoxSubTotalPlane"/>
+                <TextBox Grid.Row="22" Grid.Column="5"   IsReadOnly="True" Name="TextBoxSubTotalFact"/>
+                <TextBox Grid.Row="22" Grid.Column="7"   IsReadOnly="True" Name = "TextBoxSubTotalDifference"/>
          </Grid>
             <Grid>
                 <Grid.RowDefinitions>

@@ -173,6 +173,7 @@
                     <Button Name="GiftsAndDonations"   Click="GiftsAndDonations_OnClick" Style="{StaticResource {x:Type Button}}">Подарки</Button>
                     <Button Name="PersonalHygieneItems"   Click="PersonalHygieneItems_OnClick" Style="{StaticResource {x:Type Button}}">Гигиена</Button>
                     <Button Name="LegalExpenses"   Click="LegalExpenses_OnClick" Style="{StaticResource {x:Type Button}}">Юр расходы</Button>
+                    <Button Name="Spendingbycategory"   Click="Spendingbycategory_OnClick" Style="{StaticResource {x:Type Button}}">Сводная таблица</Button>
                 </ToolBar>
             </ToolBarTray>
             

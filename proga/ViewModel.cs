@@ -11,6 +11,8 @@ using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Drawing;
 using LiveChartsCore.SkiaSharpView.Painting;
 using SkiaSharp;
+using LiveChartsCore.SkiaSharpView.Painting;
+using SkiaSharp;
 public partial class ViewModel
 {
     // Флаг, указывающий, нажата ли мышь private bool _isDown = false;
@@ -64,7 +66,13 @@ public partial class ViewModel
             }
         };
         // Настройка скроллируемых осей
-        ScrollableAxes = new[] { new Axis() };
+        ScrollableAxes = new[]
+        {
+            new Axis
+            {
+                LabelsPaint = new SolidColorPaint(new SKColor(0, 0, 0))
+            }
+        };
         // Добавление секции для выделения области на графике
         Thumbs = new[]
         {
@@ -112,7 +120,14 @@ public partial class ViewModel
             }
         };
         // Настройка скроллируемых осей
-        ScrollableAxes = new[] { new Axis() };
+        ScrollableAxes = new[]
+        {
+            new Axis
+            {
+                LabelsPaint = new SolidColorPaint(new SKColor(0, 0, 0))
+            } 
+            
+        };
         // Добавление секции для выделения области на графике
         Thumbs = new[]
         {
