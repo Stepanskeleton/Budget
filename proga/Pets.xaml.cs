@@ -8,7 +8,6 @@ public partial class Pets : Page
     public Pets() => InitializeComponent();
     private void GraphicsUpdate() => this.DataContext = methods.GraphicUpdate();
     Methods methods = new Methods(5);
-    public static string way = "C:\\projects C#\\proga\\BdOne.db";
     private void FoodChangeText(object sender, TextChangedEventArgs e)
     {
        methods.DifferenseUpdate(ref FoodPlane, ref FoodFact, ref FoodDifference,  ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,0, "Food");

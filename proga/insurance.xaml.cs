@@ -8,7 +8,6 @@ public partial class insurance : Page
     public insurance() => InitializeComponent();
     private void GraphicsUpdate() => this.DataContext = methods.GraphicUpdate();
     Methods methods = new Methods(4);
-    public static string way = "C:\\projects C#\\proga\\BdOne.db";
     private void HouseChangeText(object sender, TextChangedEventArgs e)
     {
        methods.DifferenseUpdate(ref HousePlane, ref HouseFact, ref HouseDifference, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference, 0, "House");

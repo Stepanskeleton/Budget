@@ -8,7 +8,6 @@ public partial class LegalExpenses : Page
         InitializeComponent();
     }
     Methods methods = new Methods(4);
-    public static string way = "C:\\projects C#\\proga\\BdOne.db";
     private void AdvocateChangeText(object sender, TextChangedEventArgs e)
     {
        methods.DifferenseUpdate(ref AdvocatePlane, ref AdvocateFact, ref AdvocateDifference,  ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,0,"Advocate");

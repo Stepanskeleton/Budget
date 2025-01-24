@@ -8,7 +8,6 @@ public partial class credits : Page
     public credits() => InitializeComponent();
     private void GraphicsUpdate() => this.DataContext = methods.GraphicUpdate();
     Methods methods = new Methods(6);
-    public static string way = "C:\\projects C#\\proga\\BdOne.db";
     private void PersonalExpensesChangeText(object sender, TextChangedEventArgs e)
     {
        methods.DifferenseUpdate(ref PersonalExpensesPlane, ref PersonalExpensesFact, ref PersonalExpensesDifference,  ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference, 0, "PersonalExpenses");

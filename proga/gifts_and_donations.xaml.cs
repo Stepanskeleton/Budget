@@ -8,7 +8,6 @@ public partial class gifts_and_donations : Page
     public gifts_and_donations() => InitializeComponent();
     private void GraphicsUpdate() => this.DataContext = methods.GraphicUpdate();
     Methods methods = new Methods(3);
-    public static string way = "C:\\projects C#\\proga\\BdOne.db";
     private void Num1ChangeText(object sender, TextChangedEventArgs e)
     {
        methods.DifferenseUpdate(ref Num1Plane, ref Num1Fact, ref Num1Difference, ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,0,"Num1");

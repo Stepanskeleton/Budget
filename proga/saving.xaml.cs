@@ -8,7 +8,6 @@ public partial class saving : Page
     public saving() => InitializeComponent();
     private void GraphicsUpdate() => this.DataContext = methods.GraphicUpdate();
     Methods methods = new Methods(3);
-    public static string way = "C:\\projects C#\\proga\\BdOne.db";
     private void RetirementAccountChangeText(object sender, TextChangedEventArgs e)
     {
         methods.DifferenseUpdate(ref RetirementAccountPlane, ref RetirementAccountFact, ref RetirementAccountDifference,

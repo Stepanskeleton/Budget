@@ -8,7 +8,6 @@ public partial class PersonalHygiene : Page
     public PersonalHygiene() => InitializeComponent();
     private void GraphicsUpdate() => this.DataContext = methods.GraphicUpdate();
     Methods methods = new Methods(7);
-    public static string way = "C:\\projects C#\\proga\\BdOne.db";
     private void MedicineChangeText(object sender, TextChangedEventArgs e)
     {
         methods.DifferenseUpdate(ref MedicinePlane, ref MedicineFact, ref MedicineDifference,  ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,0,"Medicine");

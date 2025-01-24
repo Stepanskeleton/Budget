@@ -8,7 +8,6 @@ public partial class taxes : Page
     public taxes() =>InitializeComponent();
     private void GraphicsUpdate() =>  this.DataContext = methods.GraphicUpdate();
     Methods methods = new Methods(4);
-    public static string way = "C:\\projects C#\\proga\\BdOne.db";
     private void FederationsChangeText(object sender, TextChangedEventArgs e)
     {
        methods.DifferenseUpdate(ref FederationsPlane, ref FederationsFact, ref FederationsDifference,  ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,0, "Federations");

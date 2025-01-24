@@ -8,7 +8,7 @@ public  class Methods
     public double SubtotalFact = 0;
     public double SubTotalDifference = 0;
     private double Count = 0;
-    public static string way = "C:\\projects C#\\proga\\BdOne.db";
+    public static string way = "BdOne.db";
     public string dbName = "entertainment";
     public List<double> Planevalues = new List<double>();
     public List<double> Factvalues = new List<double>();

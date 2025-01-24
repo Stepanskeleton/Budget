@@ -9,7 +9,7 @@ public partial class mainPage : Page
     {
         InitializeComponent();
     }
-    public string way = "C:\\projects C#\\proga\\BdOne.db";
+    public string way = Methods.way;
     Methods methods = new Methods();
     bool startflag = false;
     private void PlaneIncomeUpdate(object sender, TextChangedEventArgs e)

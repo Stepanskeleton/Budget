@@ -42,7 +42,7 @@ public partial class ViewModelMainPage : ObservableObject
          (new SKColor(70, 120, 219)),
          (new SKColor(224, 117, 117)),
          (new SKColor(89, 212, 165)),
-         (new SKColor(1, 8, 5)),
+         (new SKColor(10, 8, 55)),
          (new SKColor(0,0,0)),
     };
     public ViewModelMainPage(List<double> values, List<string > legendsNames = null)

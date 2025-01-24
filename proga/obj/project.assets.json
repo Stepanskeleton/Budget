@@ -1081,7 +1081,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\purpl\\.nuget\\packages\\": {}
+    "C:\\Users\\zimin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -1089,12 +1089,12 @@
       "projectUniqueName": "C:\\projects C#\\proga\\proga\\proga.csproj",
       "projectName": "proga",
       "projectPath": "C:\\projects C#\\proga\\proga\\proga.csproj",
-      "packagesPath": "C:\\Users\\purpl\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\zimin\\.nuget\\packages\\",
       "outputPath": "C:\\projects C#\\proga\\proga\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "C:\\Users\\purpl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\zimin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

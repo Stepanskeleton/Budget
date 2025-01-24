@@ -8,7 +8,6 @@ public partial class transport : Page
     public transport() =>  InitializeComponent();
     private void GraphicsUpdate() => this.DataContext = methods.GraphicUpdate();
     Methods methods = new Methods(7);
-    public static string way = "C:\\projects C#\\proga\\BdOne.db";
     private void CarFeeChangeText(object sender, TextChangedEventArgs e)
     {
        methods.DifferenseUpdate(ref CarFeePlane,ref CarFeeFact, ref CarFeeDifference,  ref TextBoxSubTotalPlane, ref TextBoxSubTotalFact, ref TextBoxSubTotalDifference,0, "CarFee");

@@ -90,13 +90,12 @@ public partial class Spendingbycategory : Page
         LegalExperensesPlane.Text = a[11][0].ToString();
         LegalExperensesFact.Text = a[11][1].ToString();
         LegalExperensesDifference.Text = a[11][2].ToString();
-        string[] Names = { "Жильё","Развлечения","Транспорт","Кредиты","Страхование","Еда","","Питомцы","Налоги","Сбережения","Подарки","Юридические расходы" };
+        string[] Names = { "Жильё","Развлечения","Транспорт","Кредиты","Страхование","Еда","Питомцы","Налоги","Сбережения","Подарки","Гигиена","Юридические расходы" };
         List<double> values = new List<double>();
         for (int i = 0; i < a.Count; i++)
         {
             values.Add(a[i][1]);
         }
-
         this.DataContext = new ViewModelMainPage(values, Names);
     }
 }
