@@ -1,14 +1,15 @@
 ﻿namespace proga;
 using System.Windows;
 using System.Windows.Controls;
-
+using System.IO;
 public  class Methods
 {
     public double SubtotalPlane = 0;
     public double SubtotalFact = 0;
     public double SubTotalDifference = 0;
     private double Count = 0;
-    public static string way = "BdOne.db";
+   //public static string way = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "=BdOne.db");
+   public static string way;
     public string dbName = "entertainment";
     public List<double> Planevalues = new List<double>();
     public List<double> Factvalues = new List<double>();

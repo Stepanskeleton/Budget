@@ -28,5 +28,9 @@
         <DependentUpon>LegalExpenses.xaml</DependentUpon>
       </Page>
     </ItemGroup>
-
+    <ItemGroup>
+        <None Update="BdOne.db">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
 </Project>

@@ -94,3 +94,4 @@ C:\projects C#\proga\proga\bin\Debug\net8.0-windows\runtimes\win-x86\native\libS
 C:\projects C#\proga\proga\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\projects C#\proga\proga\obj\Debug\net8.0-windows\Spendingbycategory.g.cs
 C:\projects C#\proga\proga\obj\Debug\net8.0-windows\Spendingbycategory.baml
+C:\projects C#\proga\proga\bin\Debug\net8.0-windows\BdOne.db
